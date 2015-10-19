@@ -1,0 +1,309 @@
+body {
+	font-family: "Arial", "Helvetica", sans-serif;
+	font-size: 14;
+	text-align: center;
+	padding: 0;
+	background-color: #EFEFEB;
+	margin: 0px;
+}
+a {
+	color: #0192B5;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+
+nav {
+	margin: 0;
+	padding: 5px;
+	background-color: #FFF;
+	text-align: center;
+	width: 100%;
+
+}
+nav ul {
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0;
+	width: 85%;
+}
+nav li {
+	display: inline;
+	text-align: center;
+	padding: 3px;
+}
+nav a {
+	text-decoration: none;
+	color: #555;
+	display: inline-block;
+	padding: 8px;
+	font-size: 14px;
+}
+nav a:hover {
+	text-decoration: underline;
+}
+#float-left {
+	float: left;
+}
+#float-left form {
+	margin: 0;
+	padding: 0;
+}
+#float-right {
+	float: right;
+}
+#general-nav a {
+	font-size: 16;
+	color: #0192B5;
+}
+.search-box {
+	display: inline;
+}
+#product-nav ul {
+	clear: both;
+}
+#sign-in {
+	border: 1px solid #0192B5;
+	border-radius: 3px;
+}
+#sign-in a:hover {
+	/*color: #FFF;
+	background-color: #3CB1CB; */
+}
+
+
+
+div {
+	display: block;
+}
+
+
+
+#jumbo-link {
+	text-decoration: none;
+}
+#jumbo {
+	background-image: url("images/notelook.jpg");
+	height: 400px;
+	background-size: cover;
+	background-color: #000;
+	background-position: right;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	padding: 0;
+}
+#jumbo .container {
+	position: relative;
+	top: 15px;
+	padding: 0;
+	margin: 0;
+}
+#jumbo h1, #jumbo h2, #jumbo p {
+	color: #FFF;	
+}
+#jumbo h1 {
+	font-size: 100px;
+	font-weight: bold;
+	margin: 10px;
+	padding: 0px;
+}
+#jumbo h2 {
+	font-size: 36px;
+	margin: 0;
+	padding: 0;
+}
+#jumbo p {
+	padding: 0;
+	margin: 0;
+	font-size: 20px;
+}
+
+
+#welcome {
+	width: 65%;
+	margin: 0 auto;
+	padding: 0;
+}
+#welcome p {
+	font-size: 20px;
+	line-height: 1.3em;
+}
+
+
+#products-special {
+	clear: both;
+	width: 80%;
+	margin: 0 auto;
+	padding: 1em 0px;
+	position: relative;
+}
+#products-special div {
+	border-radius: 12px;
+	overflow: hidden;
+}
+/* 	This next section is borrowed heavily from responsivegridsystem.com. */
+.row { 
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+.col {
+	float: left;
+	background-color: #FFF;
+	display: block;
+	margin: 1% 0 1% 1.6%;
+}
+.col p {
+	font-size: 12px;
+}
+.col h2 {
+	padding: 5px;
+	margin: 0;
+}
+.col img {
+	width: 100%;
+	height: 100%;
+}
+#products-special .col:first-of-type {
+	margin-left: 0;
+}
+.group::before, .group::after {
+	content: "";
+	display: table;
+}
+.group::after {
+	clear: both;
+}
+.span-1-2 {
+	width: 49.2%;
+}
+.span-1-3 {
+	width: 32.26%;
+}
+.span-1-4 {
+	width: 23.8%;
+}
+#products-special p {
+	padding: 10px;
+}
+/* End section of borrowed material */
+
+#paper-products {
+	background-image: url("images/graph-paper-background.jpg");
+}
+#story {
+	background-image: url("images/story-background.jpg");
+	height: 400px;
+	background-size: cover;
+	background-color: #000;
+	background-position: right;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	padding: 0;
+}
+#story .container {
+	position: relative;
+	padding: 0;
+	margin: 0 auto;
+	width: 50%;
+	top: 45%;
+}
+#story p {
+	font-size: 30px;
+	color: #FFF;
+}
+
+
+#testimonials {
+	clear: both;
+	width: 80%;
+	padding: 1em 0;
+	margin: auto auto;
+	position: relative;
+}
+#testimonials div {
+	border-radius: 12px;
+	height: 200px;
+	border-collapse: separate;
+	display: table;
+}
+#testimonials .col:first-of-type {
+	margin-left: 0;
+}
+.testimonial p {
+	padding: 10px;
+	text-align: center;
+	font-size: 16px;
+	vertical-align: middle;
+	display: table-cell;
+	line-height: 1.3em;
+}
+.attribute {
+	font-style: italic;
+}
+
+
+
+#pay-it-forward {
+	clear: both;
+	background-image: url("images/pay-it-forward.jpg");
+	height: 400px;
+	background-size: cover;
+	background-color: #000;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+#pay-it-forward .container {
+	position: relative;
+	padding: 0 5%;
+	margin: 0;
+	width: 33%;
+	float: right;
+	top: 50%;
+}
+#pay-it-forward p {
+	font-size: 18px;
+	color: #FFF;
+	margin: 0;
+	padding: 0;
+}
+#pay-it-forward #title {
+	font-size: 48px;
+	width: 40%;
+	margin: 0;
+	padding: 0 5%;
+	position: relative;
+	float: left;
+}
+
+
+footer {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 13px;
+	background-color: #000;
+	height: 50px;
+}
+footer ul {
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0;
+}
+footer li {
+	display: inline;
+	text-align: center;
+}
+footer a {
+	text-decoration: none;
+	color: #0192B5;
+	display: inline-block;
+	padding: 8px;
+	font-size: 14px;
+}

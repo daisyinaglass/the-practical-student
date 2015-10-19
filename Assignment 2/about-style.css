@@ -1,0 +1,28 @@
+#content {
+	width: 75%;
+	margin: 0 auto;
+	padding: 0;
+}
+h1 {
+	font-size: 100px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+	color: #FFF;
+}
+#content p {
+	line-height: 1.3em;
+	font-size: 16px;
+}
+#about-header {
+	background-image: url("images/coffee-shop.jpg");
+	background-color: #FFF;
+	height: 450px;
+	background-size: cover;
+}
+.container {
+	position: relative;
+	top: 10%;
+	padding: 0;
+	margin: 0;
+}

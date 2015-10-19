@@ -1,0 +1,22 @@
+#results {
+	clear: both;
+	width: 80%;
+	padding: 1em 0;
+	margin: auto auto;
+	position: relative;
+}
+#results a {
+	padding: 0;
+	margin: 0;
+}
+#results div {
+	border-radius: 10px;
+	height: 200px;
+	border-collapse: separate;
+	display: table;
+	width: 23%;
+}
+#results p {
+	font-size: 20px;
+	padding: 5px;
+}

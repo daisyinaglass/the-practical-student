@@ -1,0 +1,40 @@
+.product-info {
+	height: 70%;
+}
+.product-photo {
+	width: 60%;
+	margin: 2%;
+	padding: 5px;
+	float: left;
+	height: 70%;
+	background-color: #FFF;
+	display: block;
+}
+.product-container {
+	position: relative;
+	float: right;
+	width: 30%;
+	margin: 2%;
+	padding: 0;
+	display: block;
+	border: 1px solid #000;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.product-description, .product-order {
+	margin: auto auto;
+	padding: 10px 15px;
+	background-color: #FFF;
+}
+.product-description {
+	height: 55%;
+}
+.product-description h1 {
+	font-size: 23px;
+}
+.product-description p {
+	font-size: 15px;
+	color: #000;
+	line-height: 1.3em;
+}
+
