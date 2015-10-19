@@ -1,3 +1,12 @@
+<?php 
+	//include the login script
+	include('checkLogin.php');
+
+	if (isset($_SESSION['login_user'])) {
+		header("location: profile.php");
+	}
+?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" />
 <head>
