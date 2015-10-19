@@ -30,7 +30,7 @@
 					</div>
 					<div id="float-right">
 						<li><a href="register.html">Register</a></li>
-						<li id="sign-in"><a href="sign-in.html">Sign In</a></li>
+						<li id="sign-in"><a href="login.php">Sign In</a></li>
 						<li><a href="">Cart</a></li>
 						<li><a href="">Help</a></li>
 					</div>
