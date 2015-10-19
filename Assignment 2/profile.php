@@ -7,6 +7,22 @@
 	<meta>
 </head>
 <body>
+	<?php
+		
+		$host = "localhost";
+	    $user = "X32720502";
+	    $password = "X32720502";
+	    $dbc = mysql_pconnect($host, $user, $password);
+	    $dbname = "X32720502";
+	    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
+
+	    //construct the query string
+	    $query = "";
+	    $result = mysql_query($query);
+
+	    mysql_free_result($result);
+	    mysql_close();	
+	?>
 	<header>
 		<div id="Logo">
 		</div>
