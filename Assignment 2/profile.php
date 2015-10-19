@@ -39,6 +39,7 @@
 	    if(!mysql_query($query, $dbc)) {
 	    	die('Error: '.mysql_error());
 	    }
+	    echo "<script>alert(\"Your info was added to the database\")</script>";
 
 	    mysql_free_result($result);
 	    mysql_close();	
