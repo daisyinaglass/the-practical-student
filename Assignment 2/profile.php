@@ -1,3 +1,7 @@
+<?php
+include('session.php');
+?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" />
 <head>
@@ -7,7 +11,7 @@
 	<meta>
 </head>
 <body>
-	
+
 	<header>
 		<div id="Logo">
 		</div>
@@ -43,7 +47,10 @@
 	</header>
 
 	<div id="content">
-
+		<div id="profile">
+			<p id="welcome">Welcome : <?php echo $login_session;?></p>
+			<p id="logout"><a href="logout.php">Log Out</a></p>
+		</div>
 	</div>
 
 	<footer>
