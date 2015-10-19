@@ -35,7 +35,10 @@
 
 	    //construct the query string
 	    $query = "INSERT INTO USERS VALUES ('".$username."', '".$password."', '".$firstname."', '".$lastname."', '".$email."');";
-	    $result = mysql_query($query);
+	    
+	    if(!mysql_query($query, $dbc)) {
+	    	die('Error: '.mysql_error());
+	    }
 
 	    mysql_free_result($result);
 	    mysql_close();	
