@@ -54,11 +54,13 @@
 	</header>
 
 	<div id="content">
-		<form class="login">
-			<input type="text" placeholder="Username" name="username" id="username" />
-			<input type="password" placeholder="Password" name="password" id="passowrd" />
-			<input type="submit" value="Submit" name="submit" id="submit" />
-		</form>
+		<div id="login">
+			<form action="" method="post">
+				<input type="text" placeholder="Username" name="username" id="username" />
+				<input type="password" placeholder="Password" name="password" id="passowrd" />
+				<input type="submit" value="Submit" name="submit" id="submit" />
+			</form>
+		</div>
 	</div>
 
 	<footer>
