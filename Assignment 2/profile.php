@@ -34,7 +34,7 @@
 	    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
 
 	    //construct the query string
-	    $query = "";
+	    $query = "INSERT INTO USERS VALUES ('".$username."', '".$password."', '".$firstname."', '".$lastname."', '".$email."');";
 	    $result = mysql_query($query);
 
 	    mysql_free_result($result);
