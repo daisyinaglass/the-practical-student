@@ -8,6 +8,23 @@
 </head>
 <body>
 	<?php
+		function cleanData($text) {
+			$text = trim($text);
+			$text = stripcslashes($text);
+			$text = htmlspecialchars($text);
+		}
+		//get the data sent over
+		$firstname = $_POST["firstname"];
+		$lastname = $_POST["lastname"];
+		$email = $_POST["email"];
+		$username = $_POST["username"];
+		$password = $_POST["password"];
+		//clean it up
+		cleanData($firstname);
+		cleanData($lastname);
+		cleanData($email);
+		cleanData($username);
+		cleanData($password);
 		
 		$host = "localhost";
 	    $user = "X32720502";

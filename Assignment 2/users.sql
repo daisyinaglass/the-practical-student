@@ -1,0 +1,1 @@
+CREATE TABLE USERS (Username CHAR(25) PRIMARY KEY, Password VARCHAR(100), FirstName CHAR(20), LastName CHAR(30), Email VARCHAR(50));
