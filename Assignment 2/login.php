@@ -14,6 +14,7 @@
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
+	<script type="text/javascript" src="checkLoginFields.js"></script>
 	<meta>
 </head>
 <body>
@@ -55,7 +56,7 @@
 
 	<div id="content">
 		<div id="login">
-			<form action="" method="post">
+			<form action="" method="post" onsubmit="return checkLoginFields(this)">
 				<input type="text" placeholder="Username" name="username" id="username" />
 				<input type="password" placeholder="Password" name="password" id="passowrd" />
 				<input type="submit" value="Submit" name="submit" id="submit" />
