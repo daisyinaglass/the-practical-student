@@ -1,1 +1,5 @@
-CREATE TABLE USERS (Username CHAR(25) PRIMARY KEY, Password VARCHAR(100), FirstName CHAR(20), LastName CHAR(30), Email VARCHAR(50));
+CREATE TABLE USERS (UserID INT NOT NULL AUTO_INCREMENT, Username CHAR(25), Password VARCHAR(100), FirstName CHAR(20), 
+	LastName CHAR(30), Email VARCHAR(50), AddressLine1 VARCHAR(50), AddressLine2 VARCHAR(50),
+	City CHAR(20), State CHAR(3), Zip CHAR(4), 
+	PRIMARY KEY (UserID)
+	);
