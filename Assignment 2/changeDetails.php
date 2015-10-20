@@ -47,7 +47,7 @@ include('session.php');
 	</header>
 
 	<div id="content">
-
+		<p>Update your details here! Just change any information that is wrong, and click update at the bottom of the page.</p>
 		<?php 
 			$host = "localhost";
 		    $user = "X32720502";
@@ -62,12 +62,17 @@ include('session.php');
 		
 			while ($row = mysql_fetch_array($result)) {
 				print "<form action=\"updateDatabase.php\" method=\"post\" onsubmit=\"return validateUpdate(this)\">
-				<input type=\"text\" value=\"".$row['FirstName']."\" name=\"firstname\" id=\"firstname\" />
-				<input type=\"text\" value=\"".$row['LastName']."\" name=\"lastname\" id=\"lastname\" />
-				<input type=\"email\" value=\"".$row['Email']."\" name=\"email\" id=\"email\" />
-				<input type=\"text\" value=\"".$row['Username']."\" name=\"username\" id=\"username\" />
-				<input type=\"password\" value=\"".$row['Password']."\" name=\"password\" id=\"password\" />
-				<input type=\"password\" value=\"\" name=\"confirmpassword\" id=\"confirmpassword\" />
+				First Name<input type=\"text\" value=\"".$row['FirstName']."\" name=\"firstname\" id=\"firstname\" />
+				Last Name<input type=\"text\" value=\"".$row['LastName']."\" name=\"lastname\" id=\"lastname\" />
+				Email <input type=\"email\" value=\"".$row['Email']."\" name=\"email\" id=\"email\" />
+				Address Line 1 <input type=\"text\" value=\"".$row['AddressLine1']."\" name=\"username\" id=\"username\" />
+				Address Line 2 <input type=\"text\" value=\"".$row['AddressLine2']."\" name=\"username\" id=\"username\" />
+				City <input type=\"text\" value=\"".$row['City']."\" name=\"username\" id=\"username\" />
+				State <input type=\"text\" value=\"".$row['State']."\" name=\"username\" id=\"username\" />
+				Zipcode <input type=\"text\" value=\"".$row['Zip']."\" name=\"username\" id=\"username\" />
+				Username <input type=\"text\" value=\"".$row['Username']."\" name=\"username\" id=\"username\" />
+				Password <input type=\"password\" value=\"".$row['Password']."\" name=\"password\" id=\"password\" />
+				Confirm password change<input type=\"password\" value=\"\" name=\"confirmpassword\" id=\"confirmpassword\" />
 				<!-- display current values inside of text boxes -->
 				<input type=\"submit\" name=\"submit\" value=\"Update\" />
 				</form>";
