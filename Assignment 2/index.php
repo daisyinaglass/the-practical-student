@@ -1,6 +1,9 @@
 <?php
-	$today = date("d-m-Y H:i:s");
-	setcookie('lastaccess', $today, time()+86400);
+	session_start();
+	if(!isset($_SESSION['welcome_message'])) {
+		$_SESSION['welcome_message'] = "<script>alert(\"Welcome to The Practical Student Shop!\");</script>";
+		echo $_SESSION['welcome_message'];
+	}
 ?>
 
 <!DOCTYPE html>
@@ -169,13 +172,5 @@
 			<li><a href="http://practicalstudent.tumblr.com/">Follow</a></li>
 		</ul>
 	</footer>
-	<?php 
-		$lastaccess = $_COOKIE['lastaccess'];
-		if ($lastaccess) {
-			echo "<script>alert(\"Welcome back to The Practical Student Shop!\");</script>";
-		} else {
-			echo "<script>alert(\"Welcome to The Practical Student Shop!\");</script>";
-		}
-	?>
 </body>
 </html>
