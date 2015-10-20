@@ -3,7 +3,7 @@
 	include('checkLogin.php');
 
 	if (isset($_SESSION['login_user'])) {
-		header("location: profile.php");
+		header('Location: profile.php');
 	}
 ?>
 

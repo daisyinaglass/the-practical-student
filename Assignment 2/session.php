@@ -19,9 +19,10 @@
     $user_info = mysql_query("SELECT Username FROM USERS WHERE Username='$user_check'");
     //???
     $row = mysql_fetch_assoc($user_info);
+    $login_session = $row['username'];
     //if closing??
     if (!isset($login_session)) {
     	mysql_close();
-    	header("Location: index.php");
+    	header('Location: index.php');
     }
 ?>
