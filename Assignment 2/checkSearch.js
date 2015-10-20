@@ -4,7 +4,5 @@ function checkSearch(form) {
 	if (searchtext.length == 0) {
 		alert("Please enter something to search for in the textbox");
 		return false;
-	} else {
-		alert("We are searching for " + searchtext);
 	}
 }
