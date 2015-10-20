@@ -2,6 +2,7 @@
 	//include the login script
 	include('checkLogin.php');
 
+	//if the user is logged in, redirect them to their profile page, not the login page
 	if (isset($_SESSION['login_user'])) {
 		header('Location: profile.php');
 	}
