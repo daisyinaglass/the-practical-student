@@ -61,6 +61,7 @@
 				<input type="password" placeholder="Password" name="password" id="passowrd" />
 				<input type="submit" value="Submit" name="submit" id="submit" />
 			</form>
+			<span><?php echo $error; ?></span>
 		</div>
 	</div>
 
