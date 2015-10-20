@@ -8,6 +8,7 @@ include('session.php');
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
+	<script type="text/javascript" src="validateUpdate.js"></script>
 </head>
 <body>
 	<header>
@@ -61,20 +62,19 @@ include('session.php');
 		    $result = mysql_query($query);
 		
 			while ($row = mysql_fetch_array($result)) {
-				print "<form action=\"updateDatabase.php\" method=\"post\" onsubmit=\"return validateUpdate(this)\">
+				print "<form action=\"\" method=\"post\" onsubmit=\"return validateUpdate(this)\">
 				First Name<input type=\"text\" value=\"".$row['FirstName']."\" name=\"firstname\" id=\"firstname\" />
 				Last Name<input type=\"text\" value=\"".$row['LastName']."\" name=\"lastname\" id=\"lastname\" />
 				Email <input type=\"email\" value=\"".$row['Email']."\" name=\"email\" id=\"email\" />
-				Address Line 1 <input type=\"text\" value=\"".$row['AddressLine1']."\" name=\"username\" id=\"username\" />
-				Address Line 2 <input type=\"text\" value=\"".$row['AddressLine2']."\" name=\"username\" id=\"username\" />
-				City <input type=\"text\" value=\"".$row['City']."\" name=\"username\" id=\"username\" />
-				State <input type=\"text\" value=\"".$row['State']."\" name=\"username\" id=\"username\" />
-				Zipcode <input type=\"text\" value=\"".$row['Zip']."\" name=\"username\" id=\"username\" />
+				Address Line 1 <input type=\"text\" value=\"".$row['AddressLine1']."\" name=\"addressline1\" id=\"addressline1\" />
+				Address Line 2 <input type=\"text\" value=\"".$row['AddressLine2']."\" name=\"addressline2\" id=\"addressline2\" />
+				City <input type=\"text\" value=\"".$row['City']."\" name=\"city\" id=\"city\" />
+				State <input type=\"text\" value=\"".$row['State']."\" name=\"state\" id=\"state\" />
+				Zipcode <input type=\"text\" value=\"".$row['Zip']."\" name=\"zip\" id=\"zip\" />
 				Username <input type=\"text\" value=\"".$row['Username']."\" name=\"username\" id=\"username\" />
 				Password <input type=\"password\" value=\"".$row['Password']."\" name=\"password\" id=\"password\" />
 				Confirm password change<input type=\"password\" value=\"\" name=\"confirmpassword\" id=\"confirmpassword\" />
-				<!-- display current values inside of text boxes -->
-				<input type=\"submit\" name=\"submit\" value=\"Update\" />
+				<input type=\"submit\" id=\"submit\" value=\"Update\" />
 				</form>";
 			}
 		?>
