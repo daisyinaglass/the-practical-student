@@ -1,13 +1,18 @@
 <?php
 	//starting the session
 	session_start();
+	function cleanData($text) {
+		$text = trim($text);
+		$text = stripcslashes($text);
+		$text = htmlspecialchars($text);
+	}
 
 	if (isset($_POST['submit'])) {
 		//get the variables and clean them
 		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$username = stripslashes($username);
-		$userpassword = stripslashes($password);
+		$userpassword = $_POST['password'];
+		cleanData($username);
+		cleanData($userpassword);
 
 		//connect to the database
 		$host = "localhost";
