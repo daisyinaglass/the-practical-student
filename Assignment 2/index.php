@@ -1,6 +1,6 @@
 <?php
 	$today = date("d-m-Y H:i:s");
-	setcookie('lastaccess', $today);
+	setcookie('lastaccess', $today, time()+86400);
 ?>
 
 <!DOCTYPE html>

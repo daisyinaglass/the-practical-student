@@ -1,0 +1,21 @@
+.register-box {
+	clear: both;
+	height: 100%;
+	width: 300px;
+	position: relative;
+	text-align: center;
+	margin: 10px auto;
+	padding: 15px;
+	background-color: #FFF;
+	border-radius: 10px;
+}
+.register-box form {
+	margin: 0 auto;
+	padding: 0;
+}
+.register-box form input {
+	padding: 5px;
+	margin: 3px;
+	width: 140px;
+	border-radius: 5px;
+}
