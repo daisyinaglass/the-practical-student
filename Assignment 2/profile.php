@@ -8,10 +8,6 @@ include('session.php');
 	<title>The Practical Student</title>
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="style.css" />
-	<meta>
-	<script type="text/javascript">
-		alert("Got to profile page.");
-	</script>
 </head>
 <body>
 
