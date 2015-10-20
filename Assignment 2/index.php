@@ -4,6 +4,14 @@
 		$_SESSION['welcome_message'] = "<script>alert(\"Welcome to The Practical Student Shop!\");</script>";
 		echo $_SESSION['welcome_message'];
 	}
+
+	if (!isset($_SESSION['prev_search'])) {
+		$_SESSION['prev_search'] = "";
+	}
+	if(!empty($_POST['searchtext'])) {
+		$_SESSION['prev_search'] = $_POST['searchtext'];
+		echo "<script>alert(".$_SESSION['prev_search'].");</script>";
+	}
 ?>
 
 <!DOCTYPE html>
@@ -153,6 +161,12 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div id="video-box">
+			<video width="" height="" controls>
+				<source src="passionplanner.mp4" type="video/mp4" />
+				Your browser does not support the video.
+			</video>
 		</div>
 
 		<div id="pay-it-forward">
