@@ -1,3 +1,6 @@
+<?php
+include('session.php');
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" />
 <head>
@@ -44,16 +47,32 @@
 	</header>
 
 	<div id="content">
-		<form action="updateDatabase.php" method="post" onsubmit="return validateUpdate(this)">
-			<input type="text" value="First Name" name="firstname" id="firstname" />
-			<input type="text" value="Last Name" name="lastname" id="lastname" />
-			<input type="email" value="Email" name="email" id="email" />
-			<input type="text" value="Username" name="username" id="username" />
-			<input type="password" value="Password" name="password" id="password" />
-			<input type="password" value="Confirm Password" name="confirmpassword" id="confirmpassword" />
-			<!-- display current values inside of text boxes -->
-			<input type="submit" name="submit" value="Update" />
-		</form>
+
+		<?php 
+			$host = "localhost";
+		    $user = "X32720502";
+		    $password = "X32720502";
+		    $dbc = mysql_pconnect($host, $user, $password);
+		    $dbname = "X32720502";
+		    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
+
+		    //construct the query string
+		    $query = "SELECT * FROM USERS WHERE Username='".$login_session."';";
+		    $result = mysql_query($query);
+		
+			while ($row = mysql_fetch_array($result)) {
+				print "<form action=\"updateDatabase.php\" method=\"post\" onsubmit=\"return validateUpdate(this)\">
+				<input type=\"text\" value=\"".$row['FirstName']."\" name=\"firstname\" id=\"firstname\" />
+				<input type=\"text\" value=\"".$row['LastName']."\" name=\"lastname\" id=\"lastname\" />
+				<input type=\"email\" value=\"".$row['Email']."\" name=\"email\" id=\"email\" />
+				<input type=\"text\" value=\"".$row['Username']."\" name=\"username\" id=\"username\" />
+				<input type=\"password\" value=\"".$row['Password']."\" name=\"password\" id=\"password\" />
+				<input type=\"password\" value=\"\" name=\"confirmpassword\" id=\"confirmpassword\" />
+				<!-- display current values inside of text boxes -->
+				<input type=\"submit\" name=\"submit\" value=\"Update\" />
+				</form>";
+			}
+		?>
 	</div>
 
 	<footer>

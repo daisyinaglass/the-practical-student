@@ -25,7 +25,7 @@
     mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
 
     //construct the query string
-    $query = "INSERT INTO USERS VALUES ('".$username."', '".$userpassword."', '".$firstname."', '".$lastname."', '".$email."');";
+    $query = "INSERT INTO USERS (Username, Password, FirstName, LastName, Email) VALUES ('".$username."', '".$userpassword."', '".$firstname."', '".$lastname."', '".$email."');";
     
     if(!mysql_query($query, $dbc)) {
     	die('Error: '.mysql_error());
