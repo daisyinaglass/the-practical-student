@@ -9,13 +9,13 @@
 	$lastname = $_POST["lastname"];
 	$email = $_POST["email"];
 	$username = $_POST["username"];
-	$password = $_POST["password"];
+	$userpassword = $_POST["password"];
 	//clean it up
 	cleanData($firstname);
 	cleanData($lastname);
 	cleanData($email);
 	cleanData($username);
-	cleanData($password);
+	cleanData($userpassword);
 	
 	$host = "localhost";
     $user = "X32720502";
@@ -25,7 +25,7 @@
     mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
 
     //construct the query string
-    $query = "INSERT INTO USERS VALUES ('".$username."', '".$password."', '".$firstname."', '".$lastname."', '".$email."');";
+    $query = "INSERT INTO USERS VALUES ('".$username."', '".$userpassword."', '".$firstname."', '".$lastname."', '".$email."');";
     
     if(!mysql_query($query, $dbc)) {
     	die('Error: '.mysql_error());
