@@ -31,10 +31,10 @@
     	die('Error: '.mysql_error());
     } else {
     	echo "<script>alert(\"Your info was added to the database\")</script>";
-    	header("Location: index.php");
     }
 
-    echo "<script>alert(\"Got past the if statement\")</script>";
+    echo "<script>window.location = 'index.php';</script>";
+
     mysql_free_result($result);
     mysql_close();	
 ?>
