@@ -20,7 +20,7 @@
 				<ul>
 					<div id="float-left">
 						<form action="search.php" method="get" onsubmit="return checkSearch(this)" name="search-box">
-							<li><a href="index.html">Home</a></li>
+							<li><a href="index.php">Home</a></li>
 							<div class="search-box">
 								<input type="text" id="searchtext" name="searchtext" placeholder="Search for items" />
 								<input type="submit" id="submit" value="Search" name="searchbutton" />
