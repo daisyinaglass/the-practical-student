@@ -1,9 +1,4 @@
 <?php
-	$username = $_POST['username'];
-	$password = $_POST['password'];
-	$username = stripslashes($username);
-	$password = stripslashes($password);
-
 	//connect to the database
 	$host = "localhost";
     $user = "X32720502";
@@ -14,15 +9,15 @@
 
     session_start();
     //store session
-    $user_check = $_SESSION['login-user'];
+    $user_check = $_SESSION['login_user'];
 
     $user_info = mysql_query("SELECT Username FROM USERS WHERE Username='$user_check'");
     //???
     $row = mysql_fetch_assoc($user_info);
-    $login_session = $row['username'];
+    $login_session = $row['Username'];
     //if closing??
     if (!isset($login_session)) {
     	mysql_close();
-    	header('Location: index.php');
+    	header('Location: login.php');
     }
 ?>

@@ -25,7 +25,7 @@
 	    $rows = mysql_num_rows($query);
 	    if ($rows == 1) {
 	    	//initialize session with the username
-	    	$_SESSION['login-user'] = $username;
+	    	$_SESSION['login_user'] = $username;
 	    	header('Location: profile.php');
 	    } else if ($rows > 1) {
 	    	$error = "More than one match in database; please contact admin.";
