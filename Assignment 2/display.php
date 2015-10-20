@@ -70,7 +70,29 @@
 		    	print "Sorry, we no longer have that product.";
 		    }
 		    while ($row = mysql_fetch_array($result)) {
-		        print "<div class=\"product-info\"><div class=\"product-photo\"><img src=\"".$row["PhotoReference"]."\"></div><div class=\"product-container\"><div class=\"product-description\"><h1>".$row["Name"]."</h1><p>".$row["Description"]."</p></div><div class=\"product-order\"><p>$".$row["Price"]."</p><button>Order Now</button><!-- Check if logged in; if is, take to order form, otherwise, prompt to log in --></div></div></div>";
+		        print "<div class=\"product-info\">
+		        <div class=\"product-photo\">
+		        <img src=\"".$row["PhotoReference"]."\">
+		        </div>
+		        <div class=\"product-container\">
+		        <div class=\"product-description\">
+		        <h1>".$row["Name"]."</h1>
+		        <p>".$row["Description"]."</p>
+		        </div>
+		        <div class=\"product-order\">
+		        <p>$".$row["Price"]."</p>
+		        <form action=\"addToCart.php\" method=\"post\">
+		        <select>";
+		        for ($i = 1; $i <= 15; $i++) {
+		        	print "<option value=".$i.">".$i."</option>";
+		        }
+		        print "</select>
+		        <input type=\"submit\" value=\"Order Now\" />
+		        <!-- Check if logged in; if is, take to order form, otherwise, prompt to log in -->
+		        </form>
+		        </div>
+		        </div>
+		        </div>";
 		    }
 
 		    mysql_free_result($result);
