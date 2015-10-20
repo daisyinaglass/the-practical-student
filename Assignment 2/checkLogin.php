@@ -26,7 +26,7 @@
 	    if ($rows == 1) {
 	    	//initialize session with the username
 	    	$_SESSION['login-user'] = $username;
-	    	header("location: profile.php");
+	    	header("Location: profile.php");
 	    } else if ($rows > 1) {
 	    	$error = "More than one match in database; please contact admin.";
 	    } else {

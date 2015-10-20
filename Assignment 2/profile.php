@@ -9,6 +9,9 @@ include('session.php');
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<meta>
+	<script type="text/javascript">
+		alert("Got to profile page.");
+	</script>
 </head>
 <body>
 
