@@ -1,4 +1,4 @@
-.register-box {
+.register-box, #login {
 	clear: both;
 	height: 100%;
 	width: 300px;
@@ -9,11 +9,11 @@
 	background-color: #FFF;
 	border-radius: 10px;
 }
-.register-box form {
+.register-box form, #login form {
 	margin: 0 auto;
 	padding: 0;
 }
-.register-box form input {
+.register-box form input, #login form input {
 	padding: 5px;
 	margin: 3px;
 	width: 140px;

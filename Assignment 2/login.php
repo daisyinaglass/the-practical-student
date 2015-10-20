@@ -16,6 +16,7 @@
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
 	<script type="text/javascript" src="checkLoginFields.js"></script>
+	<link rel="stylesheet" type="text/css" href="register-style.css">
 </head>
 <body>
 	<header>
@@ -56,6 +57,7 @@
 
 	<div id="content">
 		<div id="login">
+			<h1>Log In</h1>
 			<form action="" method="post" onsubmit="return checkLoginFields(this)">
 				<input type="text" placeholder="Username" name="username" id="username" />
 				<input type="password" placeholder="Password" name="password" id="passowrd" />
