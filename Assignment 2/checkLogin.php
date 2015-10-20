@@ -7,7 +7,7 @@
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 		$username = stripslashes($username);
-		$password = stripslashes($password);
+		$userpassword = stripslashes($password);
 
 		//connect to the database
 		$host = "localhost";
@@ -18,7 +18,7 @@
 	    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
 
 	    //construct a query where we look in USERS for a row that has the matching username and passowrd
-	    $query = mysql_query("SELECT * FROM USERS WHERE Username='".$username."' AND Password='".$password."';");
+	    $query = mysql_query("SELECT * FROM USERS WHERE Username='".$username."' AND Password='".$userpassword."';");
 
 	    //gather the number of rows in the result.
 	    //if there is one and only one match, log the user in
