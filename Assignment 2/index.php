@@ -10,7 +10,6 @@
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
-	<meta>
 </head>
 <body>
 	<header>
@@ -39,11 +38,11 @@
 			<div id="product-nav">
 				<ul>
 					<li><a href="">New Arrivals</a></li>
-					<li><a href="">Notelooks</a></li>
+					<li><a href="search.php?searchtext=Notelook&searchbutton=Search">Notelooks</a></li>
 					<li><a href="">Writing</a></li>
 					<li><a href="">Backpacks</a></li>
 					<li><a href="">Organization</a></li>
-					<li><a href="">Planners</a></li>
+					<li><a href="search.php?searchtext=Planner&searchbutton=Search">Planners</a></li>
 				</ul>
 			</div>
 		</nav>

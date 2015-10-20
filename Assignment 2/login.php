@@ -16,7 +16,6 @@
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
 	<script type="text/javascript" src="checkLoginFields.js"></script>
-	<meta>
 </head>
 <body>
 	<header>
@@ -36,7 +35,7 @@
 					</div>
 					<div id="float-right">
 						<li><a href="register.html">Register</a></li>
-						<li id="sign-in"><a href="sign-in.html">Sign In</a></li>
+						<li id="sign-in"><a href="login.php">Sign In</a></li>
 						<li><a href="">Cart</a></li>
 						<li><a href="">Help</a></li>
 					</div>
@@ -45,11 +44,11 @@
 			<div id="product-nav">
 				<ul>
 					<li><a href="">New Arrivals</a></li>
-					<li><a href="">Notelooks</a></li>
+					<li><a href="search.php?searchtext=Notelook&searchbutton=Search">Notelooks</a></li>
 					<li><a href="">Writing</a></li>
 					<li><a href="">Backpacks</a></li>
 					<li><a href="">Organization</a></li>
-					<li><a href="">Planners</a></li>
+					<li><a href="search.php?searchtext=Planner&searchbutton=Search">Planners</a></li>
 				</ul>
 			</div>
 		</nav>

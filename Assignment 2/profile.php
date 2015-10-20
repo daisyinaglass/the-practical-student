@@ -8,9 +8,9 @@ include('session.php');
 	<title>The Practical Student</title>
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="style.css" />
+	<script type="text/javascript" src="checkSearch.js"></script>
 </head>
 <body>
-
 	<header>
 		<div id="Logo">
 		</div>
@@ -18,15 +18,17 @@ include('session.php');
 			<div id="general-nav">
 				<ul>
 					<div id="float-left">
-						<li><a href="index.html">Home</a></li>
-						<div class="search-box">
-							<input type="text" id="searchtext" name="searchtext" placeholder="Search for items" />
-							<input type="submit" value="Search" id="searchbutton" name="searchbutton" />
-						</div>
+						<form action="search.php" method="get" onsubmit="return checkSearch(this)" name="search-box">
+							<li><a href="index.html">Home</a></li>
+							<div class="search-box">
+								<input type="text" id="searchtext" name="searchtext" placeholder="Search for items" />
+								<input type="submit" id="submit" value="Search" name="searchbutton" />
+							</div>
+						</form>
 					</div>
 					<div id="float-right">
-						<li><a href="">Register</a></li>
-						<li id="sign-in"><a href="">Sign In</a></li>
+						<li><a href="register.html">Register</a></li>
+						<li id="sign-in"><a href="login.php">Sign In</a></li>
 						<li><a href="">Cart</a></li>
 						<li><a href="">Help</a></li>
 					</div>
@@ -35,11 +37,11 @@ include('session.php');
 			<div id="product-nav">
 				<ul>
 					<li><a href="">New Arrivals</a></li>
-					<li><a href="">Notelooks</a></li>
+					<li><a href="search.php?searchtext=Notelook&searchbutton=Search">Notelooks</a></li>
 					<li><a href="">Writing</a></li>
 					<li><a href="">Backpacks</a></li>
 					<li><a href="">Organization</a></li>
-					<li><a href="">Planners</a></li>
+					<li><a href="search.php?searchtext=Planner&searchbutton=Search">Planners</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -54,9 +56,9 @@ include('session.php');
 
 	<footer>
 		<ul>
-			<li><a href="">About</a></li>
+			<li><a href="about.html">About</a></li>
 			<li><a href="">Contact</a></li>
-			<li><a href="">Follow</a></li>
+			<li><a href="http://practicalstudent.tumblr.com/">Follow</a></li>
 		</ul>
 	</footer>
 </body>

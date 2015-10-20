@@ -4,9 +4,8 @@
 	<title>The Practical Student</title>
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="style.css" />
-	<link rel="stylesheet" type="text/css" href="search-style.css">
 	<script type="text/javascript" src="checkSearch.js"></script>
-	<meta>
+	<link rel="stylesheet" type="text/css" href="search-style.css">
 </head>
 <body>
 	<header>
@@ -25,8 +24,8 @@
 						</form>
 					</div>
 					<div id="float-right">
-						<li><a href="">Register</a></li>
-						<li id="sign-in"><a href="">Sign In</a></li>
+						<li><a href="register.html">Register</a></li>
+						<li id="sign-in"><a href="login.php">Sign In</a></li>
 						<li><a href="">Cart</a></li>
 						<li><a href="">Help</a></li>
 					</div>
@@ -84,7 +83,7 @@
 		<ul>
 			<li><a href="about.html">About</a></li>
 			<li><a href="">Contact</a></li>
-			<li><a href="">Follow</a></li>
+			<li><a href="http://practicalstudent.tumblr.com/">Follow</a></li>
 		</ul>
 	</footer>
 </body>
