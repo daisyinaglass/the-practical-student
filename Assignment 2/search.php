@@ -62,7 +62,7 @@
 		    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
 
 		    //construct the query string
-		    $query = "SELECT * FROM PRODUCTS WHERE Name LIKE '%".$searchtext."%';";
+		    $query = "SELECT * FROM PRODUCTS WHERE Name LIKE '%".$searchtext."%' OR Description LIKE '%".$searchtext."%';";
 		    $result = mysql_query($query);
 
 		    //query the database & print out 
