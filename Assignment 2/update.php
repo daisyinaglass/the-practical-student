@@ -38,8 +38,6 @@
 	//construct the query string
     $query = "UPDATE USERS SET FirstName='".$firstname."', LastName='".$lastname."', Email='".$email."', AddressLine1='".$addressline1."', AddressLine2='".$addressline2."', City='".$city."', State='".$state."', Zip='".$zip."', Password='".$userpassword."' WHERE Username='".$username."';";
 
-    echo $query;
-
     if(!mysql_query($query, $dbc)) {
     	die('Error: '.mysql_error());
     } else {

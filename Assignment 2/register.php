@@ -1,7 +1,5 @@
 <?php 
 session_start();
-//assign search text to global variable
-$_SESSION['prevsearch'] = $_GET["searchtext"];
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" />
@@ -10,7 +8,9 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
-	<link rel="stylesheet" type="text/css" href="search-style.css">
+	<script type="text/javascript" src="checkRegistration.js"></script>
+	<link rel="stylesheet" type="text/css" href="form-style.css">
+	<meta>
 </head>
 <body>
 	<header>
@@ -50,40 +50,19 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 	</header>
 
 	<div id="content">
-		<div id="results">
-		<?php
-			//get the search term
-			$searchtext = $_GET["searchtext"];
-			//clean it up
-			$searchtext = trim($searchtext);
-			$searchtext = stripcslashes($searchtext);
-			$searchtext = htmlspecialchars($searchtext);
-
-			//
-			
-			$host = "localhost";
-		    $user = "X32720502";
-		    $password = "X32720502";
-		    $dbc = mysql_pconnect($host, $user, $password);
-		    $dbname = "X32720502";
-		    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
-
-		    //construct the query string
-		    $query = "SELECT * FROM PRODUCTS WHERE Name LIKE '%".$searchtext."%' OR Description LIKE '%".$searchtext."%';";
-		    $result = mysql_query($query);
-
-		    //query the database & print out 
-		    if (mysql_num_rows($result) == 0) {
-		    	print "Sorry, we don't have any products by that name.";
-		    }
-		    while ($row = mysql_fetch_array($result)) {
-		        print "<div class=\"product-result col span-1-4\"><img src=\"".$row["PhotoReference"]."\" /><p><a href=\"display.php?Name=".$row["Name"]."\">".$row["Name"]."</a></p></div>";
-		    }
-
-		    mysql_free_result($result);
-		    mysql_close();	
-		?>
+		<div class="form-box">
+			<h1>Regsiter</h1>
+			<form id="register" action="addUser.php" method="post" onsubmit="return checkRegistration(this)">
+				<input type="text" placeholder="First Name" name="firstname" id="firstname" /><br />
+				<input type="text" placeholder="Last Name" name="lastname" id="lastname" /><br />
+				<input type="email" placeholder="Email" name="email" id="email" /><br />
+				<input type="text" placeholder="Username" name="username" id="username" /><br />
+				<input type="password" placeholder="Password" name="password" id="password" /><br />
+				<input type="password" placeholder="Confirm Password" name="confirmpassword" id="confirmpassword" /><br />
+				<input type="submit" value="Submit" />
+			</form>
 		</div>
+
 	</div>
 
 	<footer>

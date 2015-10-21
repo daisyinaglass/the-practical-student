@@ -29,8 +29,8 @@ session_start();
 					<div id="float-right">
 						<li><a href="register.html">Register</a></li>
 						<li id="sign-in"><a href="login.php">Sign In</a></li>
-						<li><a href="">Cart</a></li>
-						<li><a href="">Help</a></li>
+						<li><a href="cart.php">Cart</a></li>
+						<li><a href="help.php">Help</a></li>
 					</div>
 				</ul>
 			</div>
@@ -65,8 +65,8 @@ session_start();
 
 	<footer>
 		<ul>
-			<li><a href="about.html">About</a></li>
-			<li><a href="">Contact</a></li>
+			<li><a href="about.php">About</a></li>
+			<li><a href="contact.php">Contact</a></li>
 			<li><a href="http://practicalstudent.tumblr.com/">Follow</a></li>
 		</ul>
 	</footer>

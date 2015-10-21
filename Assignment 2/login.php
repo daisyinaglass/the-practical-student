@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	//include the login script
 	include('checkLogin.php');
 
@@ -29,7 +30,7 @@
 						<form action="search.php" method="get" onsubmit="return checkSearch(this)" name="search-box">
 							<li><a href="index.php">Home</a></li>
 							<div class="search-box">
-								<input type="text" id="searchtext" name="searchtext" placeholder="Search for items" />
+								<input type="text" id="searchtext" name="searchtext" value="<?php echo $_SESSION['prevsearch'];?>" />
 								<input type="submit" id="submit" value="Search" name="searchbutton" />
 							</div>
 						</form>
@@ -37,8 +38,8 @@
 					<div id="float-right">
 						<li><a href="register.html">Register</a></li>
 						<li id="sign-in"><a href="login.php">Sign In</a></li>
-						<li><a href="">Cart</a></li>
-						<li><a href="">Help</a></li>
+						<li><a href="cart.php">Cart</a></li>
+						<li><a href="help.php">Help</a></li>
 					</div>
 				</ul>
 			</div>
@@ -69,8 +70,8 @@
 
 	<footer>
 		<ul>
-			<li><a href="about.html">About</a></li>
-			<li><a href="">Contact</a></li>
+			<li><a href="about.php">About</a></li>
+			<li><a href="contact.php">Contact</a></li>
 			<li><a href="http://practicalstudent.tumblr.com/">Follow</a></li>
 		</ul>
 	</footer>

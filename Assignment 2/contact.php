@@ -1,7 +1,5 @@
-<?php 
+<?php
 session_start();
-//assign search text to global variable
-$_SESSION['prevsearch'] = $_GET["searchtext"];
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" />
@@ -10,7 +8,25 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
-	<link rel="stylesheet" type="text/css" href="search-style.css">
+	<script type="text/javascript">
+		function validateForm() {
+			var email = document.contactform.email.value;
+			var pattern = /\S+@+\S+.\S+/;
+			if (document.contactform.contactname.value == "") {
+				alert("Please provide a name!");
+				return false;
+			} else if (pattern.test(email) == false) {
+				alert("Please enter a valid email address.");
+				return false;
+			} else if (document.contactform.message.value == "") {
+				alert("Please enter your message!");
+				return false;
+			} else {
+				alert("Thank you for sending an email!")
+				return true;
+			}
+		}
+	</script>
 </head>
 <body>
 	<header>
@@ -50,40 +66,22 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 	</header>
 
 	<div id="content">
-		<div id="results">
-		<?php
-			//get the search term
-			$searchtext = $_GET["searchtext"];
-			//clean it up
-			$searchtext = trim($searchtext);
-			$searchtext = stripcslashes($searchtext);
-			$searchtext = htmlspecialchars($searchtext);
-
-			//
-			
-			$host = "localhost";
-		    $user = "X32720502";
-		    $password = "X32720502";
-		    $dbc = mysql_pconnect($host, $user, $password);
-		    $dbname = "X32720502";
-		    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
-
-		    //construct the query string
-		    $query = "SELECT * FROM PRODUCTS WHERE Name LIKE '%".$searchtext."%' OR Description LIKE '%".$searchtext."%';";
-		    $result = mysql_query($query);
-
-		    //query the database & print out 
-		    if (mysql_num_rows($result) == 0) {
-		    	print "Sorry, we don't have any products by that name.";
-		    }
-		    while ($row = mysql_fetch_array($result)) {
-		        print "<div class=\"product-result col span-1-4\"><img src=\"".$row["PhotoReference"]."\" /><p><a href=\"display.php?Name=".$row["Name"]."\">".$row["Name"]."</a></p></div>";
-		    }
-
-		    mysql_free_result($result);
-		    mysql_close();	
-		?>
-		</div>
+		<h1>Contact Us!</h1>
+		<p>Phone: <a href="tel:61-123-456-789">+61 123 456 789</a></p>
+		<p>Email: <a href="mailto:thepracticalstudent@gmail.com">thepracticalstudent@gmail.com</a></p>
+		<form name="contactform" action="" method="post" onsubmit="return validateForm(this)">
+			Name: <br />
+			<input type="text" name="contactname" />
+			<br />
+			Email: <br />
+			<input type="text" name="email" />
+			<br />
+			Message <br />
+			<textarea name="message" rows="10" cols="50"></textarea>
+			<br />
+			<input type="submit" name="send" value="Send" />
+			<br />
+		</form>
 	</div>
 
 	<footer>

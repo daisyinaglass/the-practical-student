@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" />
 <head>
@@ -36,7 +39,7 @@
 						<form action="search.php" method="get" onsubmit="return checkSearch(this)" name="search-box">
 							<li><a href="index.php">Home</a></li>
 							<div class="search-box">
-								<input type="text" id="searchtext" name="searchtext" placeholder="Search for items" />
+								<input type="text" id="searchtext" name="searchtext" value="<?php echo $_SESSION['prevsearch'];?>" />
 								<input type="submit" id="submit" value="Search" name="searchbutton" />
 							</div>
 						</form>
