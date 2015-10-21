@@ -1,5 +1,4 @@
 function checkAddProduct(form) {
-	alert("Got to js");
 	var name = form.name.value;
 	var price = form.price.value;
 	var photoref = form.photoref.value;
