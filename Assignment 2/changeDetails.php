@@ -73,13 +73,14 @@ include('session.php');
 				City <input type=\"text\" value=\"".$row['City']."\" name=\"city\" id=\"city\" /><br />
 				State <input type=\"text\" value=\"".$row['State']."\" name=\"state\" id=\"state\" /><br />
 				Zipcode <input type=\"text\" value=\"".$row['Zip']."\" name=\"zip\" id=\"zip\" /><br />
-				Username <input type=\"text\" value=\"".$row['Username']."\" name=\"username\" id=\"username\" /><br />
+				Username <input type=\"text\" value=\"".$row['Username']."\" name=\"username\" id=\"username\" readonly/><br />
 				Password <input type=\"password\" value=\"".$row['Password']."\" name=\"password\" id=\"password\" /><br />
 				Confirm password change<input type=\"password\" value=\"\" name=\"confirmpassword\" id=\"confirmpassword\" /><br />
 				<input type=\"submit\" id=\"submit\" value=\"Update\" />
 				</form>";
 			}
 			print "</form>";
+			mysql_close();
 		?>
 	</div>
 
