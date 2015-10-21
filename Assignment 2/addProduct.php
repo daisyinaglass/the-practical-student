@@ -9,6 +9,7 @@ session_start();
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
 	<link rel="stylesheet" type="text/css" href="form-style.css" />
+	<script type="text/javascript" src="checkAddProduct.js"></script>
 </head>
 <body>
 	<header>
@@ -53,7 +54,7 @@ session_start();
 			<form id="addproduct" action="insertProduct.php" method="post" onsubmit="return checkAddProduct(this)">
 				<input type="text" placeholder="Product Name" name="name" id="name" /><br />
 				<input type="text" placeholder="Price ($$$.$$)" name="price" id="price" /><br />
-				<input type="text" placeholder="Photo Reference (images/file.jpg)" name="photoref" id="photoref" /><br />
+				<input type="text" placeholder="Photo Reference (file.jpg)" name="photoref" id="photoref" /><br />
 				<textarea placeholder="Product description" name="description" id="description"></textarea><br />
 				<input type="submit" value="Submit" />
 			</form>
