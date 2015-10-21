@@ -51,7 +51,28 @@ include('session.php');
 	<div id="content">
 		<div id="profile">
 			<p id="welcome">Welcome : <?php echo $login_session;?></p>
-			<p id="changeDetals"><a href="changeDetails.php">Change Details</a></p>
+			<p id="changeDetails"><a href="changeDetails.php">Change Details</a></p>
+			<?php 
+			//if the user is a staff member, include a link to add a product
+			//get info from database
+			$host = "localhost";
+		    $user = "X32720502";
+		    $password = "X32720502";
+		    $dbc = mysql_pconnect($host, $user, $password);
+		    $dbname = "X32720502";
+		    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
+
+		    //construct the query string
+		    $query = "SELECT * FROM USERS WHERE Username='".$login_session."';";
+		    $result = mysql_query($query);
+
+		    while ($row = mysql_fetch_array($result)) {
+		    	if ($row['StaffMember'] === 'Y') {
+		    		echo "<p id=\"addProduct\"><a href=\"addProduct.php\">Add Product</a></p>";
+		    	}
+		    }
+			mysql_close();
+			?>
 			<p id="logout"><a href="logout.php">Log Out</a></p>
 		</div>
 	</div>
