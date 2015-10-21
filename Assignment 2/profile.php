@@ -69,6 +69,10 @@ include('session.php');
 		    while ($row = mysql_fetch_array($result)) {
 		    	if ($row['StaffMember'] === 'Y') {
 		    		echo "<p id=\"addProduct\"><a href=\"addProduct.php\">Add Product</a></p>";
+		    		echo "<p id=\"deleteProduct\"><a href=\"deleteProduct.php\">Delete Product</a></p>";
+		    		echo "<p id=\"updateProduct\"><a href=\"updateProduct.php\">Update Product</a></p>";
+		    		echo "<p id=\"viewUser\"><a href=\"viewUser.php\">View User Account</a></p>";
+		    		echo "<p id=\"addStaff\"><a href=\"addStaff.php\">Add Staff Account</a></p>";
 		    	}
 		    }
 			mysql_close();
