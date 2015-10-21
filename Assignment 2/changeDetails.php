@@ -9,6 +9,7 @@ include('session.php');
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
 	<script type="text/javascript" src="validateUpdate.js"></script>
+	<link rel="stylesheet" type="text/css" href="form-style.css">
 </head>
 <body>
 	<header>
@@ -60,23 +61,25 @@ include('session.php');
 		    //construct the query string
 		    $query = "SELECT * FROM USERS WHERE Username='".$login_session."';";
 		    $result = mysql_query($query);
-		
+			
+			print "<div class=\"form-box\">";
 			while ($row = mysql_fetch_array($result)) {
-				print "<form action=\"\" method=\"post\" onsubmit=\"return validateUpdate(this)\">
-				First Name<input type=\"text\" value=\"".$row['FirstName']."\" name=\"firstname\" id=\"firstname\" />
-				Last Name<input type=\"text\" value=\"".$row['LastName']."\" name=\"lastname\" id=\"lastname\" />
-				Email <input type=\"email\" value=\"".$row['Email']."\" name=\"email\" id=\"email\" />
-				Address Line 1 <input type=\"text\" value=\"".$row['AddressLine1']."\" name=\"addressline1\" id=\"addressline1\" />
-				Address Line 2 <input type=\"text\" value=\"".$row['AddressLine2']."\" name=\"addressline2\" id=\"addressline2\" />
-				City <input type=\"text\" value=\"".$row['City']."\" name=\"city\" id=\"city\" />
-				State <input type=\"text\" value=\"".$row['State']."\" name=\"state\" id=\"state\" />
-				Zipcode <input type=\"text\" value=\"".$row['Zip']."\" name=\"zip\" id=\"zip\" />
-				Username <input type=\"text\" value=\"".$row['Username']."\" name=\"username\" id=\"username\" />
-				Password <input type=\"password\" value=\"".$row['Password']."\" name=\"password\" id=\"password\" />
-				Confirm password change<input type=\"password\" value=\"\" name=\"confirmpassword\" id=\"confirmpassword\" />
+				print "<form action=\"update.php\" method=\"post\" onsubmit=\"return validateUpdate(this)\">
+				First Name<input type=\"text\" value=\"".$row['FirstName']."\" name=\"firstname\" id=\"firstname\" /><br />
+				Last Name<input type=\"text\" value=\"".$row['LastName']."\" name=\"lastname\" id=\"lastname\" /><br />
+				Email <input type=\"email\" value=\"".$row['Email']."\" name=\"email\" id=\"email\" /><br />
+				Address Line 1 <input type=\"text\" value=\"".$row['AddressLine1']."\" name=\"addressline1\" id=\"addressline1\" /><br />
+				Address Line 2 <input type=\"text\" value=\"".$row['AddressLine2']."\" name=\"addressline2\" id=\"addressline2\" /><br />
+				City <input type=\"text\" value=\"".$row['City']."\" name=\"city\" id=\"city\" /><br />
+				State <input type=\"text\" value=\"".$row['State']."\" name=\"state\" id=\"state\" /><br />
+				Zipcode <input type=\"text\" value=\"".$row['Zip']."\" name=\"zip\" id=\"zip\" /><br />
+				Username <input type=\"text\" value=\"".$row['Username']."\" name=\"username\" id=\"username\" /><br />
+				Password <input type=\"password\" value=\"".$row['Password']."\" name=\"password\" id=\"password\" /><br />
+				Confirm password change<input type=\"password\" value=\"\" name=\"confirmpassword\" id=\"confirmpassword\" /><br />
 				<input type=\"submit\" id=\"submit\" value=\"Update\" />
 				</form>";
 			}
+			print "</form>";
 		?>
 	</div>
 

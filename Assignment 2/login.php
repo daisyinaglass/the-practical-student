@@ -16,7 +16,7 @@
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
 	<script type="text/javascript" src="checkLoginFields.js"></script>
-	<link rel="stylesheet" type="text/css" href="register-style.css">
+	<link rel="stylesheet" type="text/css" href="form-style.css">
 </head>
 <body>
 	<header>
@@ -56,11 +56,11 @@
 	</header>
 
 	<div id="content">
-		<div id="login">
+		<div class="form-box">
 			<h1>Log In</h1>
 			<form action="" method="post" onsubmit="return checkLoginFields(this)">
-				<input type="text" placeholder="Username" name="username" id="username" />
-				<input type="password" placeholder="Password" name="password" id="passowrd" />
+				<input type="text" placeholder="Username" name="username" id="username" /><br />
+				<input type="password" placeholder="Password" name="password" id="passowrd" /><br />
 				<input type="submit" value="Submit" name="submit" id="submit" />
 			</form>
 			<span><?php echo $error; ?></span>

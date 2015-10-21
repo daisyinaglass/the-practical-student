@@ -6,7 +6,7 @@
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
 	<script type="text/javascript" src="checkRegistration.js"></script>
-	<link rel="stylesheet" type="text/css" href="register-style.css">
+	<link rel="stylesheet" type="text/css" href="form-style.css">
 	<meta>
 </head>
 <body>
@@ -47,15 +47,15 @@
 	</header>
 
 	<div id="content">
-		<div class="register-box">
+		<div class="form-box">
 			<h1>Regsiter</h1>
 			<form id="register" action="addUser.php" method="post" onsubmit="return checkRegistration(this)">
-				<input type="text" placeholder="First Name" name="firstname" id="firstname" />
-				<input type="text" placeholder="Last Name" name="lastname" id="lastname" />
-				<input type="email" placeholder="Email" name="email" id="email" />
-				<input type="text" placeholder="Username" name="username" id="username" />
-				<input type="password" placeholder="Password" name="password" id="password" />
-				<input type="password" placeholder="Confirm Password" name="confirmpassword" id="confirmpassword" />
+				<input type="text" placeholder="First Name" name="firstname" id="firstname" /><br />
+				<input type="text" placeholder="Last Name" name="lastname" id="lastname" /><br />
+				<input type="email" placeholder="Email" name="email" id="email" /><br />
+				<input type="text" placeholder="Username" name="username" id="username" /><br />
+				<input type="password" placeholder="Password" name="password" id="password" /><br />
+				<input type="password" placeholder="Confirm Password" name="confirmpassword" id="confirmpassword" /><br />
 				<input type="submit" value="Submit" />
 			</form>
 		</div>
