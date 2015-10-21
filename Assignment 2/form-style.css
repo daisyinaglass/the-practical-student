@@ -19,3 +19,7 @@
 	width: 140px;
 	border-radius: 5px;
 }
+.form-box textarea {
+	width: 500px;
+	height: 150px;
+}
