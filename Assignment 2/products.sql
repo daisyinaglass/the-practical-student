@@ -1,4 +1,5 @@
-CREATE TABLE PRODUCTS (ProductID INTEGER(7) PRIMARY KEY, Name CHAR(40), Price NUMERIC(5,2), PhotoReference VARCHAR(1000), Description VARCHAR(1000));
+CREATE TABLE PRODUCTS (ProductID INTEGER(7) NOT NULL AUTO_INCREMENT, Name CHAR(40), Price NUMERIC(5,2), PhotoReference VARCHAR(1000), Description VARCHAR(1000), PRIMARY KEY (ProductID));
+
 INSERT INTO PRODUCTS VALUES (1000000, "Traditional Weekly Planner", 20.00, "images/traditional-weekly-planner.jpg", "Your favorite planner is back, with enough space to hold all of the things you plan to do! This medium-sized weekly version let's you plan out your week at a glace and has a monthly overview.");
 INSERT INTO PRODUCTS VALUES (1000001, "Traditional Monthly Planner", 20.00, "images/traditional-monthly-planner.jpg", "Your favorite planner is back, with enough space to hold all of the things you plan to do! This medium-sized monthly version is perfect for those who only need to plan their major obligations.");
 INSERT INTO PRODUCTS VALUES (1000002, "Traditional Daily Planner", 20.00, "images/traditional-daily-planner.jpg", "Your favorite planner is back, with enough space to hold all of the things you plan to do! This medium-sized daily version is great for those who need to plan out each day down to the minute.");
