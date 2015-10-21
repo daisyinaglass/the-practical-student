@@ -34,11 +34,19 @@
 		cleanData($city);
 		cleanData($state);
 		cleanData($zip);
+	
+    	//construct the query string
+	    $query = "";
+
+	    if(!mysql_query($query, $dbc)) {
+	    	die('Error: '.mysql_error());
+	    } else {
+	    	echo "<script>alert(\"Your info was updated in the database\")</script>";
+	    }
+
+	    echo "<script>window.location = 'index.php';</script>";
+
+	    mysql_free_result($result);
+	    mysql_close();
 	}
-    //construct the query string
-    $query = "";
-    $result = mysql_query($query);
-
-
-    mysql_close();
 ?>
