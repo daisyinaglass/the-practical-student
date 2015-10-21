@@ -35,11 +35,11 @@ session_start();
 			</div>
 			<div id="product-nav">
 				<ul>
-					<li><a href="">New Arrivals</a></li>
+					<li><a href="search.php?searchtext=&searchbutton=Search">All Products</a></li>
 					<li><a href="search.php?searchtext=Notelook&searchbutton=Search">Notelooks</a></li>
 					<li><a href="">Writing</a></li>
 					<li><a href="">Backpacks</a></li>
-					<li><a href="">Organization</a></li>
+					<li><a href="search.php?searchtext=organize&searchbutton=Search">Organization</a></li>
 					<li><a href="search.php?searchtext=Planner&searchbutton=Search">Planners</a></li>
 				</ul>
 			</div>
