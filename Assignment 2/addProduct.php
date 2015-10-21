@@ -49,6 +49,14 @@ session_start();
 
 	<div id="content">
 		<div class="form-box">
+			<h1>Add Product</h1>
+			<form id="addproduct" action="insertProduct.php" method="post" onsubmit="return checkAddProduct(this)">
+				<input type="text" placeholder="Product Name" name="name" id="name" /><br />
+				<input type="text" placeholder="Price ($$$.$$)" name="price" id="price" /><br />
+				<input type="text" placeholder="Photo Reference (images/file.jpg)" name="photoref" id="photoref" /><br />
+				<textarea placeholder="Product description" name="description" id="description"></textarea><br />
+				<input type="submit" value="Submit" />
+			</form>
 		</div>
 
 	</div>
