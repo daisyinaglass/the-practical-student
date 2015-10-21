@@ -8,6 +8,7 @@ session_start();
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
+	<link rel="stylesheet" type="text/css" href="form-style.css">
 	<script type="text/javascript">
 		function validateForm() {
 			var email = document.contactform.email.value;
@@ -45,7 +46,7 @@ session_start();
 						</form>
 					</div>
 					<div id="float-right">
-						<li><a href="register.html">Register</a></li>
+						<li><a href="register.php">Register</a></li>
 						<li id="sign-in"><a href="login.php">Sign In</a></li>
 						<li><a href="cart.php">Cart</a></li>
 						<li><a href="help.php">Help</a></li>
@@ -66,22 +67,24 @@ session_start();
 	</header>
 
 	<div id="content">
-		<h1>Contact Us!</h1>
-		<p>Phone: <a href="tel:61-123-456-789">+61 123 456 789</a></p>
-		<p>Email: <a href="mailto:thepracticalstudent@gmail.com">thepracticalstudent@gmail.com</a></p>
-		<form name="contactform" action="" method="post" onsubmit="return validateForm(this)">
-			Name: <br />
-			<input type="text" name="contactname" />
-			<br />
-			Email: <br />
-			<input type="text" name="email" />
-			<br />
-			Message <br />
-			<textarea name="message" rows="10" cols="50"></textarea>
-			<br />
-			<input type="submit" name="send" value="Send" />
-			<br />
-		</form>
+		<div class="form-box">
+			<h1>Contact Us!</h1>
+			<p>Phone: <a href="tel:61-123-456-789">+61 123 456 789</a></p>
+			<p>Email: <a href="mailto:thepracticalstudent@gmail.com">thepracticalstudent@gmail.com</a></p>
+			<form name="contactform" action="" method="post" onsubmit="return validateForm(this)">
+				Name: <br />
+				<input type="text" name="contactname" />
+				<br />
+				Email: <br />
+				<input type="text" name="email" />
+				<br />
+				Message <br />
+				<textarea name="message" rows="10" cols="50"></textarea>
+				<br />
+				<input type="submit" name="send" value="Send" />
+				<br />
+			</form>
+		</div>
 	</div>
 
 	<footer>

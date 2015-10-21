@@ -28,7 +28,7 @@ include('session.php');
 						</form>
 					</div>
 					<div id="float-right">
-						<li><a href="register.html">Register</a></li>
+						<li><a href="register.php">Register</a></li>
 						<li id="sign-in"><a href="login.php">Sign In</a></li>
 						<li><a href="cart.php">Cart</a></li>
 						<li><a href="help.php">Help</a></li>

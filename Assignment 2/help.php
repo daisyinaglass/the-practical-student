@@ -7,6 +7,7 @@ session_start();
 	<title>The Practical Student</title>
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="about-style.css">
 	<script type="text/javascript" src="checkSearch.js"></script>
 </head>
 <body>
@@ -26,7 +27,7 @@ session_start();
 						</form>
 					</div>
 					<div id="float-right">
-						<li><a href="register.html">Register</a></li>
+						<li><a href="register.php">Register</a></li>
 						<li id="sign-in"><a href="login.php">Sign In</a></li>
 						<li><a href="cart.php">Cart</a></li>
 						<li><a href="help.php">Help</a></li>
@@ -47,7 +48,6 @@ session_start();
 	</header>
 
 	<div id="content">
-		<h1>Help!</h1>
 		<h2>How do I use The Practical Student Website?</h2>
 		<p>Welcome to our shop!</p>
 		<p>When a customer first arrives at the online store, they are greeted by a personal message from the Practical Student team. The customer is invited to browse around the store, and they’ll be notified of the mailing list that they can sign up for. Signing up for the mailing list means that customers will be the first to know about sales, special offers, and when new shipments arrive. Signup is free and customers can opt out at any time.</p>
