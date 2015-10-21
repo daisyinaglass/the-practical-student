@@ -14,9 +14,7 @@ function validateUpdate(form) {
 		alert("Please enter your password into the textbox.");
 		return false;
 	} else if (password !== confirmpassword) {
-		alert("Passwords do not match
-			Please enter your old password to confirm OR
-			Re-enter your new password.");
+		alert("Passwords do not match Please enter your old password to confirm OR Re-enter your new password.");
 		return false;
 	}
 }
