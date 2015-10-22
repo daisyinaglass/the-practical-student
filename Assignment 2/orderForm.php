@@ -9,6 +9,7 @@ session_start();
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
 	<link rel="stylesheet" type="text/css" href="form-style.css" />
+	<script type="text/javascript" src="validateOrder.js"></script>
 </head>
 <body>
 	<header>
@@ -51,6 +52,7 @@ session_start();
 		<div class="form-box">
 			<form action="sendOrder.php" method="post" onsubmit=" return validateOrder(this)">
 				<div id="shipping">
+					<h1>Shipping</h1>
 					<input type="text" placeholder="Name" name="name" id="name" /><br />
 					<input type="text" placeholder="Address Line 1" name="addressline1" id="addressline1" /><br />
 					<input type="text" placeholder="Address Line 2" name="addressline2" id="addressline2" /><br />
@@ -59,11 +61,13 @@ session_start();
 					<input type="text" placeholder="Zipcode" name="zip" id="zip" /><br />
 				</div>
 				<div id="payment">
+					<h1>Payment</h1>
 					<input type="text" placeholder="Name on card" name="cardholder" id="cardholder" /><br />
 					<input type="text" placeholder="Credit Card Number" name="creditcard" id="creditcard" /><br />
 					<input type="text" placeholder="CVV" name="cvv" id="cvv" /><br />
 					<input type="text" placeholder="Expiration date" name="exp" id="exp" /><br />
 				</div>
+				<input type="submit" value="Submit" name="submit" />
 			</form>
 		</div>
 	</div>
