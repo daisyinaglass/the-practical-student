@@ -75,6 +75,7 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 			    if (mysql_num_rows($result) == 0) {
 			    	print "Cart empty. Go shop our store!";
 			    } else {
+			    	print "<form action=\"orderForm.php\" method=\"post\">";
 			    	while ($prodrow = mysql_fetch_array($result)) {
 			    		print "
 			    		<div class=\"cart-item \">
@@ -88,11 +89,12 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 								<button type=\"button\" >Remove</button>
 							</div>
 						</div>";
+						$total += number_format(floatval($prodrow["Price"]*$qty), 2);
 			    	}
 			    }
 			}
-		    print "<input type=\"text\" name=\"total\"/>";
-
+		    print "Total: $<input type=\"text\" name=\"total\" value=\"".number_format(floatval($total), 2)."\"/>";
+		    print "<input type=\"submit\" value=\"Order Now\"></form>";
 
 		    mysql_free_result($result);
 		    mysql_close();	
