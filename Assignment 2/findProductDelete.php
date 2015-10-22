@@ -48,12 +48,36 @@ session_start();
 	</header>
 
 	<div id="content">
-		<div class="form-box">
-			<form action="findProductDelete.php" method="get">
-				<input type="text" name="productid" id="productid" placeholder="Product ID" />
-				<input type="submit" value="Find" />
-			</form>
-		</div>
+		<?php 
+			$productid = $_GET['productid'];
+			
+			$host = "localhost";
+		    $user = "X32720502";
+		    $password = "X32720502";
+		    $dbc = mysql_pconnect($host, $user, $password);
+		    $dbname = "X32720502";
+		    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
+
+		    //construct the query string
+		    $query = "SELECT * FROM PRODUCTS WHERE ProductID='".$productid."';";
+		    $result = mysql_query($query);
+			
+			print "<div class=\"form-box\">";
+			while ($row = mysql_fetch_array($result)) {
+				print "<h1>Delete Product</h1>
+				<h2>Delete this product?</h2>
+				<form id=\"deleteproduct\" action=\"deleteThisProduct.php\" method=\"post\" >
+					<input type=\"text\" value=\"".$row['Name']."\" name=\"name\" id=\"name\" readonly /><br />
+					<input type=\"text\" value=\"".$row['Price']."\" name=\"price\" id=\"price\" readonly /><br />
+					<input type=\"text\" value=\"".$row['PhotoReference']."\" name=\"photoref\" id=\"photoref\" readonly /><br />
+					<input type=\"text\" value=\"".$row['Category']."\" name=\"category\" id=\"category\" readonly /><br />
+					<textarea name=\"description\" id=\"description\" readonly>".$row['Description']."</textarea><br />
+					<input type=\"submit\" value=\"Delete\" />
+				</form>";
+			}
+			print "</form>";
+			mysql_close();
+		?>
 	</div>
 
 	<footer>
