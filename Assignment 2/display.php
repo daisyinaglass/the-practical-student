@@ -83,16 +83,20 @@ session_start();
 		        <p>".$row["Description"]."</p>
 		        </div>
 		        <div class=\"product-order\">
-		        <p>$".$row["Price"]."</p>
-		        <form action=\"addToCart.php\" method=\"post\">
-		        <select>";
-		        for ($i = 1; $i <= 15; $i++) {
-		        	print "<option value=".$i.">".$i."</option>";
-		        }
-		        print "</select>
-		        <input type=\"submit\" value=\"Order Now\" />
-		        <!-- Check if logged in; if is, take to order form, otherwise, prompt to log in -->
-		        </form>
+		        <p>$".$row["Price"]."</p>";
+		        if (isset($_SESSION['login_user'])) {
+		        	print "<form action=\"addToCart.php\" method=\"post\">
+			        <select>";
+			        for ($i = 1; $i <= 15; $i++) {
+			        	print "<option value=".$i.">".$i."</option>";
+			        }
+			        print "</select>
+			        <input type=\"hidden\" value=\"".$row['ProductID']."\" />
+			        <input type=\"submit\" value=\"Add to Cart\" />";
+				} else {
+					print "<p>Sign up to order!</p>";
+				}    
+		        print "</form>
 		        </div>
 		        </div>
 		        </div>";
