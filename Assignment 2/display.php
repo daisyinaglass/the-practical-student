@@ -86,12 +86,12 @@ session_start();
 		        <p>$".$row["Price"]."</p>";
 		        if (isset($_SESSION['login_user'])) {
 		        	print "<form action=\"addToCart.php\" method=\"post\">
-			        <select>";
+			        <select name=\"quantity\">";
 			        for ($i = 1; $i <= 15; $i++) {
 			        	print "<option value=".$i.">".$i."</option>";
 			        }
 			        print "</select>
-			        <input type=\"hidden\" value=\"".$row['ProductID']."\" />
+			        <input type=\"hidden\" name=\"productid\" value=\"".$row['ProductID']."\" />
 			        <input type=\"submit\" value=\"Add to Cart\" />";
 				} else {
 					print "<p>Sign up to order!</p>";
