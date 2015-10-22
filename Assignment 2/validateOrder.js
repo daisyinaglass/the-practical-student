@@ -1,5 +1,4 @@
 function validateOrder(form) {
-	alert("Got to script");
 	var name = form.name.value;
 	var addressline1 = form.addressline1.value;
 	var addressline2 = form.addressline2.value;
