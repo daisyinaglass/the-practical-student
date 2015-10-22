@@ -10,7 +10,7 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 	<meta charset="utf-8" />
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
-	<link rel="stylesheet" type="text/css" href="search-style.css">
+	<link rel="stylesheet" type="text/css" href="cart-style.css">
 </head>
 <body>
 	<header>
@@ -63,21 +63,36 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 		    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
 
 		    foreach($_SESSION['cart'] as $row => $innerArray){
-				foreach($innerArray as $innerRow => $value){
-					//do stuff
-					$query = "SELECT * FROM PRODUCTS WHERE ;";
-				}
+				$productid = $innerArray[0];
+				$qty = $innerArray[1];
+				//echo $productid;
+				//echo $qty;
+				$query = "SELECT * FROM PRODUCTS WHERE ProductID='".$productid."';";
+				//echo $query;
+				$result = mysql_query($query);
+				//echo "Created result";
+				//query the database & print out 
+			    if (mysql_num_rows($result) == 0) {
+			    	print "Cart empty. Go shop our store!";
+			    } else {
+			    	while ($prodrow = mysql_fetch_array($result)) {
+			    		print "
+			    		<div class=\"cart-item \">
+							<div class=\"img-div\">
+								<img src=\"images/".$prodrow["PhotoReference"]."\" />
+							</div>
+							<div class=\"info\">
+								<h1>".$prodrow["Name"]."</h1>
+								<p>Individual Price: $".$prodrow["Price"].", Quantity: ".$qty."</p>
+								<p>Sub-total: $".number_format(floatval($prodrow["Price"]*$qty), 2)."</p>
+								<button type=\"button\" >Remove</button>
+							</div>
+						</div>";
+			    	}
+			    }
 			}
-		    
-		    $result = mysql_query($query);
+		    print "<input type=\"text\" name=\"total\"/>";
 
-		    //query the database & print out 
-		    if (mysql_num_rows($result) == 0) {
-		    	print "Cart empty. Go shop our store!";
-		    }
-		    while ($row = mysql_fetch_array($result)) {
-		        print "<div class=\"product-result col span-1-2\"><img src=\"images/".$row["PhotoReference"]."\" /><p><a href=\"display.php?Name=".$row["Name"]."\">".$row["Name"]."</a></p></div>";
-		    }
 
 		    mysql_free_result($result);
 		    mysql_close();	
@@ -85,6 +100,7 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 		</div>
 	</div>
 
+	</div>
 	<footer>
 		<ul>
 			<li><a href="about.php">About</a></li>

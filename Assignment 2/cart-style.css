@@ -1,0 +1,29 @@
+#results {
+	width: 70%;
+	margin: 0 auto;
+	padding: 0;
+}
+.cart-item {
+	margin: 2%;
+	padding: 5px;
+	background-color: #FFF;
+	height: 40%;
+	clear: both;
+	overflow: hidden;
+}
+.img-div {
+	width: 40%;
+	height: 100%;
+	margin: 2%;
+	padding: 5px;
+	float: left;
+	background-color: #FFF;
+	display: block;
+}
+.info {
+	width: 50%;
+	float: right;
+}
+h1 {
+	font-size: 23px;
+}
