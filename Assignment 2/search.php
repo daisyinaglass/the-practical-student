@@ -52,8 +52,9 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 	<div id="content">
 		<div id="results">
 		<?php
-			//get the search term
+			//get the search termsearchbutton=Search
 			$searchtext = $_GET["searchtext"];
+			$searchbutton = $_GET["searchbutton"];
 			//clean it up
 			$searchtext = trim($searchtext);
 			$searchtext = stripcslashes($searchtext);
@@ -69,7 +70,13 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 		    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
 
 		    //construct the query string
-		    $query = "SELECT * FROM PRODUCTS WHERE Name LIKE '%".$searchtext."%' OR Description LIKE '%".$searchtext."%';";
+		    if (isset($searchbutton)) {
+		    	$query = "SELECT * FROM PRODUCTS WHERE Name LIKE '%".$searchtext."%' OR Description LIKE '%".$searchtext."%';";
+		    } else {
+		    	$query = "SELECT * FROM PRODUCTS WHERE Category = '".$searchtext."';";
+		    }
+
+		    
 		    $result = mysql_query($query);
 
 		    //query the database & print out 
