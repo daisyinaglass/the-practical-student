@@ -24,7 +24,7 @@
     $dbname = "X32720502";
     mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
 
-    $query = "INSERT INTO PRODUCTS (Name, Price, Category, PhotoReference, Description) VALUES ('".$name."', '".$price."', '".$category."', '".$photoref."', '".$description."');";
+    $query = "INSERT INTO PRODUCTS (Name, Price, Category, PhotoReference, Description) VALUES ('".$name."', '".$price."', '".$category."', 'images/".$photoref."', '".$description."');";
 
     if(!mysql_query($query, $dbc)) {
     	die('Error: '.mysql_error());
