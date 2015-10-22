@@ -72,9 +72,10 @@ session_start();
 					<form id=\"updateproduct\" action=\"updateThisProduct.php\" method=\"post\" onsubmit=\"return checkAddProduct(this)\" >
 						<input type=\"text\" value=\"".$row['Name']."\" name=\"name\" id=\"name\" /><br />
 						<input type=\"text\" value=\"".$row['Price']."\" name=\"price\" id=\"price\" /><br />
-						<input type=\"text\" value=\"".substr($row['PhotoReference'], strpos($row['PhotoReference'], "/") + 1)."\" name=\"photoref\" id=\"photoref\" /><br />
+						<input type=\"text\" value=\"".substr($row['PhotoReference'], strpos($row['PhotoReference'], "/"))."\" name=\"photoref\" id=\"photoref\" /><br />
 						<input type=\"text\" value=\"".$row['Category']."\" name=\"category\" id=\"category\" /><br />
 						<textarea name=\"description\" id=\"description\">".$row['Description']."</textarea><br />
+						<input type=\"hidden\" value=\"".$row['ProductID']."\" name=\"productid\" id=\"productid\" />
 						<input type=\"submit\" value=\"Update\" />
 					</form>";
 				}

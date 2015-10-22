@@ -76,6 +76,7 @@ session_start();
 						<input type=\"text\" value=\"".substr($row['PhotoReference'], strpos($row['PhotoReference'], "/") + 1)."\" name=\"photoref\" id=\"photoref\" readonly /><br />
 						<input type=\"text\" value=\"".$row['Category']."\" name=\"category\" id=\"category\" readonly /><br />
 						<textarea name=\"description\" id=\"description\" readonly>".$row['Description']."</textarea><br />
+						<input type=\"hidden\" value=\"".$row['ProductID']."\" name=\"productid\" id=\"productid\" />
 						<input type=\"submit\" value=\"Delete\" />
 					</form>";
 				}
