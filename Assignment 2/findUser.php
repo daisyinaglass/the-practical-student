@@ -49,8 +49,8 @@ session_start();
 
 	<div id="content">
 		<?php 
-			$productid = $_GET['productid'];
-			
+			$username = $_GET['username'];
+
 			$host = "localhost";
 		    $user = "X32720502";
 		    $password = "X32720502";
@@ -59,23 +59,27 @@ session_start();
 		    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
 
 		    //construct the query string
-		    $query = "SELECT * FROM PRODUCTS WHERE ProductID='".$productid."';";
+		    $query = "SELECT * FROM USERS WHERE Username='".$username."';";
 		    $result = mysql_query($query);
+			
 
-		    if (mysql_num_rows($result) == 0) {
-		    	print "Product does not exist in database.";
+			if (mysql_num_rows($result) == 0) {
+		    	print "User does not exist in database.";
 		    } else {
-				print "<div class=\"form-box\">";
+				print "<div class=\"form-box\">
+					<h1>View User</h1>";
 				while ($row = mysql_fetch_array($result)) {
-					print "<h1>Delete Product</h1>
-					<h2>Delete this product?</h2>
-					<form id=\"deleteproduct\" action=\"deleteThisProduct.php\" method=\"post\" >
-						<input type=\"text\" value=\"".$row['Name']."\" name=\"name\" id=\"name\" readonly /><br />
-						<input type=\"text\" value=\"".$row['Price']."\" name=\"price\" id=\"price\" readonly /><br />
-						<input type=\"text\" value=\"".$row['PhotoReference']."\" name=\"photoref\" id=\"photoref\" readonly /><br />
-						<input type=\"text\" value=\"".$row['Category']."\" name=\"category\" id=\"category\" readonly /><br />
-						<textarea name=\"description\" id=\"description\" readonly>".$row['Description']."</textarea><br />
-						<input type=\"submit\" value=\"Delete\" />
+					print "<form>
+					First Name<input type=\"text\" value=\"".$row['FirstName']."\" name=\"firstname\" id=\"firstname\" readonly /><br />
+					Last Name<input type=\"text\" value=\"".$row['LastName']."\" name=\"lastname\" id=\"lastname\" readonly /><br />
+					Email <input type=\"email\" value=\"".$row['Email']."\" name=\"email\" id=\"email\" readonly /><br />
+					Address Line 1 <input type=\"text\" value=\"".$row['AddressLine1']."\" name=\"addressline1\" id=\"addressline1\" readonly /><br />
+					Address Line 2 <input type=\"text\" value=\"".$row['AddressLine2']."\" name=\"addressline2\" id=\"addressline2\" readonly /><br />
+					City <input type=\"text\" value=\"".$row['City']."\" name=\"city\" id=\"city\" readonly /><br />
+					State <input type=\"text\" value=\"".$row['State']."\" name=\"state\" id=\"state\" readonly /><br />
+					Zipcode <input type=\"text\" value=\"".$row['Zip']."\" name=\"zip\" id=\"zip\" readonly /><br />
+					Username <input type=\"text\" value=\"".$row['Username']."\" name=\"username\" id=\"username\" readonly /><br />
+					Password <input type=\"text\" value=\"".$row['Password']."\" name=\"password\" id=\"password\" readonly /><br />
 					</form>";
 				}
 				print "</form>";

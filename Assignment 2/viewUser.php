@@ -50,37 +50,13 @@ include('session.php');
 	</header>
 
 	<div id="content">
-		<p>User Profile</p>
-		<?php 
-			$host = "localhost";
-		    $user = "X32720502";
-		    $password = "X32720502";
-		    $dbc = mysql_pconnect($host, $user, $password);
-		    $dbname = "X32720502";
-		    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
-
-		    //construct the query string
-		    $query = "SELECT * FROM USERS WHERE UserID='".$userid."';";
-		    $result = mysql_query($query);
-			
-			print "<div class=\"form-box\">";
-			while ($row = mysql_fetch_array($result)) {
-				print "<form>
-				First Name<input type=\"text\" value=\"".$row['FirstName']."\" name=\"firstname\" id=\"firstname\" readonly /><br />
-				Last Name<input type=\"text\" value=\"".$row['LastName']."\" name=\"lastname\" id=\"lastname\" readonly /><br />
-				Email <input type=\"email\" value=\"".$row['Email']."\" name=\"email\" id=\"email\" readonly /><br />
-				Address Line 1 <input type=\"text\" value=\"".$row['AddressLine1']."\" name=\"addressline1\" id=\"addressline1\" readonly /><br />
-				Address Line 2 <input type=\"text\" value=\"".$row['AddressLine2']."\" name=\"addressline2\" id=\"addressline2\" readonly /><br />
-				City <input type=\"text\" value=\"".$row['City']."\" name=\"city\" id=\"city\" readonly /><br />
-				State <input type=\"text\" value=\"".$row['State']."\" name=\"state\" id=\"state\" readonly /><br />
-				Zipcode <input type=\"text\" value=\"".$row['Zip']."\" name=\"zip\" id=\"zip\" readonly /><br />
-				Username <input type=\"text\" value=\"".$row['Username']."\" name=\"username\" id=\"username\" readonly/><br />
-				Password <input type=\"password\" value=\"".$row['Password']."\" name=\"password\" id=\"password\" readonly /><br />
-				</form>";
-			}
-			print "</form>";
-			mysql_close();
-		?>
+		<div class="form-box">
+			<form action="findUser.php" method="get">
+				<h1>Find User</h1>
+				<input type="text" name="username" id="username" placeholder="Username" />
+				<input type="submit" value="Find" />
+			</form>
+		</div>
 	</div>
 
 	<footer>
