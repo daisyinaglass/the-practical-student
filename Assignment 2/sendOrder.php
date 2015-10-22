@@ -21,23 +21,23 @@ foreach($_SESSION['cart'] as $row => $innerArray){
 
 	//if user exceeds amount, write alert
 	while ($row = mysql_fetch_array($result)) {
-		echo $qty;
-		echo $row['Stock'];
-		if ($row['Stock'] - $qty < 0) {
-			echo "<script>alert(\"We\'ve run out of ".$row['Name']."!<br>Please allow two weeks for restocking and the shipment of your other ".$qty-$row['Stock']." ".$row['Name'].".\");</script>";
+		if (($row['Stock'] - $qty) < 0) {
+			$extra = $qty - $row['Stock'];
+			echo "<script>alert(\"We've run out of ".$row['Name']."!Please allow two weeks for restocking and the shipment of your other ".$extra." ".$row['Name'].".\");</script>";
 			$newStock = 0;
 		} else {
 			$newStock = $row['Stock'] - $qty;
-			echo $newStock;
 			//echo "<script>alert(\"Thank you!\");</script>";
 		}
 		//update how many of product are left
 		$update = mysql_query("UPDATE PRODUCTS SET Stock='".$newStock."' WHERE ProductID='".$productid."';");
-		echo $row['Name'].", ".$row['Stock']."<br>";
 	}
 	
 		
 }
 	$_SESSION['cart'] = array();
 	echo "<script>alert(\"Thank you for shopping with us!\");</script>";
+	echo "<script>window.location = 'index.php';</script>";
+
+    mysql_close();	
 ?>

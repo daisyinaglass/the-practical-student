@@ -87,7 +87,7 @@ session_start();
 		        if (isset($_SESSION['login_user'])) {
 		        	print "<form action=\"addToCart.php\" method=\"post\">
 			        <select name=\"quantity\">";
-			        for ($i = 1; $i <= 15; $i++) {
+			        for ($i = 1; $i <= 100; $i++) {
 			        	print "<option value=".$i.">".$i."</option>";
 			        }
 			        print "</select>
