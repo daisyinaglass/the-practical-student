@@ -84,7 +84,7 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 		    	print "Sorry, we don't have any products by that name.";
 		    }
 		    while ($row = mysql_fetch_array($result)) {
-		        print "<div class=\"product-result col span-1-4\"><img src=\"".$row["PhotoReference"]."\" /><p><a href=\"display.php?Name=".$row["Name"]."\">".$row["Name"]."</a></p></div>";
+		        print "<div class=\"product-result col span-1-4\"><img src=\"images/".$row["PhotoReference"]."\" /><p><a href=\"display.php?Name=".$row["Name"]."\">".$row["Name"]."</a></p></div>";
 		    }
 
 		    mysql_free_result($result);

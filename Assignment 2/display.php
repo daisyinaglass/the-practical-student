@@ -75,7 +75,7 @@ session_start();
 		    while ($row = mysql_fetch_array($result)) {
 		        print "<div class=\"product-info\">
 		        <div class=\"product-photo\">
-		        <img src=\"".$row["PhotoReference"]."\">
+		        <img src=\"images/".$row["PhotoReference"]."\">
 		        </div>
 		        <div class=\"product-container\">
 		        <div class=\"product-description\">
