@@ -4,8 +4,6 @@ session_start();
 $quantity = $_POST['quantity'];
 $productid = $_POST['productid'];
 
-echo $quantity . $productid;
-
 $productid = trim($productid);
 $productid = stripcslashes($productid);
 $productid = htmlspecialchars($productid);
@@ -33,11 +31,13 @@ if (!$result) {
 		$_SESSION['cart'][] = $product;
     }
 
-	foreach($_SESSION['cart'] as $row => $innerArray){
+	/*foreach($_SESSION['cart'] as $row => $innerArray){
 		foreach($innerArray as $innerRow => $value){
 			echo $value . "<br/>";
 		}
-	}
+	}*/
+	//echo "<script>alert(\"Finished the script!\");</script>";
+	echo "<script>window.history.back()</script>";
 }
 
 
