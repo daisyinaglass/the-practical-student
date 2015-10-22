@@ -62,6 +62,7 @@ session_start();
 		    $query = "SELECT * FROM PRODUCTS WHERE ProductID='".$productid."';";
 		    $result = mysql_query($query);
 
+
 		    if (mysql_num_rows($result) == 0) {
 		    	print "Product does not exist in database.";
 		    } else {
@@ -72,7 +73,7 @@ session_start();
 					<form id=\"deleteproduct\" action=\"deleteThisProduct.php\" method=\"post\" >
 						<input type=\"text\" value=\"".$row['Name']."\" name=\"name\" id=\"name\" readonly /><br />
 						<input type=\"text\" value=\"".$row['Price']."\" name=\"price\" id=\"price\" readonly /><br />
-						<input type=\"text\" value=\"".$row['PhotoReference']."\" name=\"photoref\" id=\"photoref\" readonly /><br />
+						<input type=\"text\" value=\"".substr($row['PhotoReference'], strpos($row['PhotoReference'], "/") + 1)."\" name=\"photoref\" id=\"photoref\" readonly /><br />
 						<input type=\"text\" value=\"".$row['Category']."\" name=\"category\" id=\"category\" readonly /><br />
 						<textarea name=\"description\" id=\"description\" readonly>".$row['Description']."</textarea><br />
 						<input type=\"submit\" value=\"Delete\" />

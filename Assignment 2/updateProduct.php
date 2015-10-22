@@ -9,7 +9,6 @@ session_start();
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<link rel="stylesheet" type="text/css" href="form-style.css">
 	<script type="text/javascript" src="checkSearch.js"></script>
-	<script type="text/javascript" src="checkAddProduct.js"></script>
 </head>
 <body>
 	<header>
@@ -49,35 +48,13 @@ session_start();
 	</header>
 
 	<div id="content">
-		<?php 
-			$host = "localhost";
-		    $user = "X32720502";
-		    $password = "X32720502";
-		    $dbc = mysql_pconnect($host, $user, $password);
-		    $dbname = "X32720502";
-		    mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
-
-		    //construct the query string
-		    $query = "SELECT * FROM USERS WHERE ProductID='".$productid."';";
-		    $result = mysql_query($query);
-			
-			print "<div class=\"form-box\">";
-			while ($row = mysql_fetch_array($result)) {
-				print "<h1>Update Product</h1>
-				<form id=\"updateproduct\" action=\"changeProduct.php\" method=\"post\" onsubmit=\"return checkAddProduct(this)\">
-					<input type=\"text\" value=\"".$row['Name']."\" name=\"name\" id=\"name\" /><br />
-					<input type=\"text\" value=\"".$row['Price']."\" name=\"price\" id=\"price\" /><br />
-					<input type=\"text\" value=\"".$row['PhotoReference']."\" name=\"photoref\" id=\"photoref\" /><br />
-					<input type=\"text\" value=\"".$row['Category']."\" name=\"category\" id=\"category\" /><br />
-					<textarea value=\"".$row['Description']."\" name=\"description\" id=\"description\"></textarea><br />
-					<input type=\"submit\" value=\"Update\" />
-				</form>";
-			}
-			print "</form>";
-			mysql_close();
-		?>
-
-			
+		<div class="form-box">
+			<form action="findProductUpdate.php" method="get">
+				<h1>Find Product</h1>
+				<input type="text" name="productid" id="productid" placeholder="Product ID" />
+				<input type="submit" value="Find" />
+			</form>
+		</div>	
 	</div>
 
 	<footer>

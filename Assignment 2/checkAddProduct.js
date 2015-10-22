@@ -6,7 +6,7 @@ function checkAddProduct(form) {
 	var category = form.category.value;
 
 	var pricePat = /^\d{1,3}\.\d{2}$/;
-	var photoPat = /^\w*\.[a-zA-Z]{3}$/;
+	var photoPat = /^[\w,\s-]+\.[A-Za-z]{3}$/;
 
 	name = name.replace(/^\s+|\s+$/g,'');
 	photoref = photoref.replace(/^\s+|\s+$/g,'');
