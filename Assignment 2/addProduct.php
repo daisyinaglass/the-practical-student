@@ -55,6 +55,7 @@ session_start();
 				<input type="text" placeholder="Product Name" name="name" id="name" /><br />
 				<input type="text" placeholder="Price ($$$.$$)" name="price" id="price" /><br />
 				<input type="text" placeholder="Photo Reference (file.jpg)" name="photoref" id="photoref" /><br />
+				<input type="text" placeholder="Category" name="category" id="category" /><br />
 				<textarea placeholder="Product description" name="description" id="description"></textarea><br />
 				<input type="submit" value="Submit" />
 			</form>

@@ -9,11 +9,13 @@
 	$price = number_format(floatval($_POST["price"]), 2);
 	$photoref = $_POST["photoref"];
 	$description = $_POST["description"];
+	$category = $_POST["category"];
 
 	cleanData($name);
 	cleanData($price);
 	cleanData($photoref);
 	cleanData($description);
+	cleanData($category);
 
 	$host = "localhost";
     $user = "X32720502";
@@ -22,7 +24,7 @@
     $dbname = "X32720502";
     mysql_select_db($dbname) or die("Cannot connect to database ".mysql_error());
 
-    $query = "INSERT INTO PRODUCTS (Name, Price, PhotoReference, Description) VALUES ('".$name."', '".$price."', '".$photoref."', '".$description."');";
+    $query = "INSERT INTO PRODUCTS (Name, Price, Category, PhotoReference, Description) VALUES ('".$name."', '".$price."', '".$category."', '".$photoref."', '".$description."');";
 
     if(!mysql_query($query, $dbc)) {
     	die('Error: '.mysql_error());
