@@ -6,9 +6,12 @@
 	margin: 2%;
 	padding: 5px;
 	float: left;
-	height: 70%;
+	height: auto;
 	background-color: #FFF;
 	display: block;
+}
+.product-photo img {
+	width: 100%;
 }
 .product-container {
 	position: relative;

@@ -163,8 +163,8 @@ div {
 	margin: 0;
 }
 .col img {
-	width: 100%;
-	height: 100%;
+	width: 95%;
+	height: auto%;
 }
 #products-special .col:first-of-type {
 	margin-left: 0;
