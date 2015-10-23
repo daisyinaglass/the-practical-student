@@ -20,6 +20,9 @@
 	background-color: #FFF;
 	display: block;
 }
+.img-div img {
+	width: 100%;
+}
 .info {
 	width: 50%;
 	float: right;

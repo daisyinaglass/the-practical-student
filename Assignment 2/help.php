@@ -49,7 +49,7 @@ session_start();
 
 	<div id="content">
 		<h2>How do I use The Practical Student Website?</h2>
-		<p>Welcome to our shop!</p>
+		<div style="width: 640px; height: 480px; margin: 10px auto; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://www.lucidchart.com/documents/embeddedchart/b969ce08-6175-47ec-90a5-1438f16f9b4b" id="S~lmRDRVbPJA"></iframe></div>
 		<p>When a customer first arrives at the online store, they are greeted by a personal message from the Practical Student team. The customer is invited to browse around the store, and they’ll be notified of the mailing list that they can sign up for. Signing up for the mailing list means that customers will be the first to know about sales, special offers, and when new shipments arrive. Signup is free and customers can opt out at any time.</p>
 		<p>From the homepage, the customer can browse through the site in a variety of ways. The first way to browse is through the search box if the customer has a product in mind that they would like to view. The website will take the search and return any products that contain the search in their title or description. </p>
 		<p>A second way to browse is through different sections of items highlighted on the screen. Customers can, for example, select the Pencil section to view all types of pencil cases, or they can select the Planner tab to view all of the planners. This way, customers are able to look through all sorts of items without having a clear idea of what they are looking for. </p>
