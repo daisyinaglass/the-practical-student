@@ -11,6 +11,7 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 	<link type="text/css" rel="stylesheet" href="style.css" />
 	<script type="text/javascript" src="checkSearch.js"></script>
 	<link rel="stylesheet" type="text/css" href="cart-style.css">
+	<script type="text/javascript" src="removeItem.js"></script>
 </head>
 <body>
 	<header>
@@ -78,22 +79,22 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 			    	print "<form action=\"orderForm.php\" method=\"post\">";
 			    	while ($prodrow = mysql_fetch_array($result)) {
 			    		print "
-			    		<div class=\"cart-item \">
+			    		<div class=\"cart-item\" id=\"".$prodrow["ProductID"]."\">
 							<div class=\"img-div\">
 								<img src=\"images/".$prodrow["PhotoReference"]."\" />
 							</div>
-							<div class=\"info\">
+							<div class=\"info\" >
 								<h1>".$prodrow["Name"]."</h1>
 								<p>Individual Price: $".$prodrow["Price"].", Quantity: ".$qty."</p>
 								<p>Sub-total: $".number_format(floatval($prodrow["Price"]*$qty), 2)."</p>
-								<button type=\"button\" >Remove</button>
+								<button type=\"button\" onclick=\"removeItem('".$prodrow["ProductID"]."')\">Remove</button>
 							</div>
 						</div>";
 						$total += number_format(floatval($prodrow["Price"]*$qty), 2);
 			    	}
 			    }
 			}
-		    print "Total: $<input type=\"text\" name=\"total\" value=\"".number_format(floatval($total), 2)."\"/>";
+		    print "Total: $<input type=\"text\" id=\"\" name=\"total\" value=\"".number_format(floatval($total), 2)."\"/>";
 		    print "<input type=\"submit\" value=\"Order Now\"></form>";
 
 		    mysql_free_result($result);
