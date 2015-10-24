@@ -26,9 +26,23 @@ $result = mysql_query($query);
 if (!$result) {
 	echo "<script>Error with adding to cart</script>";
 } else {
+	$found = false;
 	while ($row = mysql_fetch_array($result)) {
-		$product = array($productid, $quantity);
-		$_SESSION['cart'][] = $product;
+		//if already exists in cart, add to it
+		for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+			if($_SESSION['cart'][$i][0] == $productid) {
+				echo "<script>Found match; adding more to cart</script>";
+				$_SESSION['cart'][$i][1] += $quantity;
+				$found = true;
+				break;
+			}
+		}
+		//otherwise, create a new array element
+		if ($found == false) {
+			$product = array($productid, $quantity);
+			$_SESSION['cart'][] = $product;
+		}
+		
     }
 
 	/*foreach($_SESSION['cart'] as $row => $innerArray){
@@ -36,7 +50,6 @@ if (!$result) {
 			echo $value . "<br/>";
 		}
 	}*/
-	//echo "<script>alert(\"Finished the script!\");</script>";
 	echo "<script>window.history.back()</script>";
 }
 

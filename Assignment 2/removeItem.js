@@ -1,6 +1,9 @@
 function removeItem(productID) {
-	alert("Got to js script");
+	//alert("Got to js script");
 	var productDiv = document.getElementById(productID);
+	var total = document.getElementById("total").value;
+	var productID = productID;
+	//alert("Product ID is: "+productID);
 
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function () {
@@ -10,7 +13,7 @@ function removeItem(productID) {
 			productDiv.remove();
 		}
 	}
-	xhr.open("POST", "removeItem.php");
+	xhr.open("GET", "removeItem.php?productID="+productID+"&total="+total);
 	
 	xhr.send(null);
 }

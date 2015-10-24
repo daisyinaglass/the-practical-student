@@ -79,7 +79,7 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 			    	print "<form action=\"orderForm.php\" method=\"post\">";
 			    	while ($prodrow = mysql_fetch_array($result)) {
 			    		print "
-			    		<div class=\"cart-item\" id=\"".$prodrow["ProductID"]."\">
+			    		<div class=\"cart-item\" id=\"".$productid."\">
 							<div class=\"img-div\">
 								<img src=\"images/".$prodrow["PhotoReference"]."\" />
 							</div>
@@ -91,10 +91,11 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 							</div>
 						</div>";
 						$total += number_format(floatval($prodrow["Price"]*$qty), 2);
+			    		$i++;
 			    	}
 			    }
 			}
-		    print "Total: $<input type=\"text\" id=\"\" name=\"total\" value=\"".number_format(floatval($total), 2)."\"/>";
+		    print "Total: $<input type=\"text\" id=\"total\" name=\"total\" value=\"".number_format(floatval($total), 2)."\"/>";
 		    print "<input type=\"submit\" value=\"Order Now\"></form>";
 
 		    mysql_free_result($result);
