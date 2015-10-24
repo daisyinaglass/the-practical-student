@@ -74,6 +74,7 @@ session_start();
 						<input type=\"text\" value=\"".$row['Price']."\" name=\"price\" id=\"price\" /><br />
 						<input type=\"text\" value=\"".substr($row['PhotoReference'], strpos($row['PhotoReference'], "/"))."\" name=\"photoref\" id=\"photoref\" /><br />
 						<input type=\"text\" value=\"".$row['Category']."\" name=\"category\" id=\"category\" /><br />
+						<input type=\"text\" value=\"".$row['Stock']."\" name=\"stock\" id=\"stock\" /><br />
 						<textarea name=\"description\" id=\"description\">".$row['Description']."</textarea><br />
 						<input type=\"hidden\" value=\"".$row['ProductID']."\" name=\"productid\" id=\"productid\" />
 						<input type=\"submit\" value=\"Update\" />
