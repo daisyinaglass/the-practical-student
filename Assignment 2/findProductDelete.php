@@ -71,13 +71,14 @@ session_start();
 					print "<h1>Delete Product</h1>
 					<h2>Delete this product?</h2>
 					<form id=\"deleteproduct\" action=\"deleteThisProduct.php\" method=\"post\" >
-						<input type=\"text\" value=\"".$row['Name']."\" name=\"name\" id=\"name\" readonly /><br />
-						<input type=\"text\" value=\"".$row['Price']."\" name=\"price\" id=\"price\" readonly /><br />
-						<input type=\"text\" value=\"".substr($row['PhotoReference'], strpos($row['PhotoReference'], "/") + 1)."\" name=\"photoref\" id=\"photoref\" readonly /><br />
-						<input type=\"text\" value=\"".$row['Category']."\" name=\"category\" id=\"category\" readonly /><br />
-						<textarea name=\"description\" id=\"description\" readonly>".$row['Description']."</textarea><br />
+						Name: <input type=\"text\" value=\"".$row['Name']."\" name=\"name\" id=\"name\" /><br />
+						Price: <input type=\"text\" value=\"".$row['Price']."\" name=\"price\" id=\"price\" /><br />
+						Photo file: <input type=\"text\" value=\"".substr($row['PhotoReference'], strpos($row['PhotoReference'], "/"))."\" name=\"photoref\" id=\"photoref\" /><br />
+						Category: <input type=\"text\" value=\"".$row['Category']."\" name=\"category\" id=\"category\" /><br />
+						Stock: <input type=\"text\" value=\"".$row['Stock']."\" name=\"stock\" id=\"stock\" /><br />
+						Description: <textarea name=\"description\" id=\"description\">".$row['Description']."</textarea><br />
 						<input type=\"hidden\" value=\"".$row['ProductID']."\" name=\"productid\" id=\"productid\" />
-						<input type=\"submit\" value=\"Delete\" />
+						<input type=\"submit\" value=\"Update\" />
 					</form>";
 				}
 				print "</form>";

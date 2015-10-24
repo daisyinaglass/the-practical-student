@@ -70,12 +70,12 @@ session_start();
 				while ($row = mysql_fetch_array($result)) {
 					print "<h1>Update Product</h1>
 					<form id=\"updateproduct\" action=\"updateThisProduct.php\" method=\"post\" onsubmit=\"return checkAddProduct(this)\" >
-						<input type=\"text\" value=\"".$row['Name']."\" name=\"name\" id=\"name\" /><br />
-						<input type=\"text\" value=\"".$row['Price']."\" name=\"price\" id=\"price\" /><br />
-						<input type=\"text\" value=\"".substr($row['PhotoReference'], strpos($row['PhotoReference'], "/"))."\" name=\"photoref\" id=\"photoref\" /><br />
-						<input type=\"text\" value=\"".$row['Category']."\" name=\"category\" id=\"category\" /><br />
-						<input type=\"text\" value=\"".$row['Stock']."\" name=\"stock\" id=\"stock\" /><br />
-						<textarea name=\"description\" id=\"description\">".$row['Description']."</textarea><br />
+						Name: <input type=\"text\" value=\"".$row['Name']."\" name=\"name\" id=\"name\" /><br />
+						Price: <input type=\"text\" value=\"".$row['Price']."\" name=\"price\" id=\"price\" /><br />
+						Photo file: <input type=\"text\" value=\"".substr($row['PhotoReference'], strpos($row['PhotoReference'], "/"))."\" name=\"photoref\" id=\"photoref\" /><br />
+						Category: <input type=\"text\" value=\"".$row['Category']."\" name=\"category\" id=\"category\" /><br />
+						Stock: <input type=\"text\" value=\"".$row['Stock']."\" name=\"stock\" id=\"stock\" /><br />
+						Description: <textarea name=\"description\" id=\"description\">".$row['Description']."</textarea><br />
 						<input type=\"hidden\" value=\"".$row['ProductID']."\" name=\"productid\" id=\"productid\" />
 						<input type=\"submit\" value=\"Update\" />
 					</form>";
