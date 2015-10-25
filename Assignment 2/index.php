@@ -174,7 +174,7 @@
 				<h1>Pay-It-Forward</h1>
 			</div>
 			<div class="container">
-				<p>We do our best to make sure every student has what they need in order to succeed in school, no matter their financial situation. That's why we have the Pay-It-Forward program, where those with a little more can help those who have a little less. <span><a href="">Click to find out more!</a></span></p>
+				<p>We do our best to make sure every student has what they need in order to succeed in school, no matter their financial situation. That's why we have the Pay-It-Forward program, where those with a little more can help those who have a little less. Stay tuned to find out more!</p>
 			</div>
 		</div>
 	</div>
