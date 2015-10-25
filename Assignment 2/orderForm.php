@@ -57,14 +57,14 @@ session_start();
 					<input type="text" placeholder="Address Line 1" name="addressline1" id="addressline1" /><br />
 					<input type="text" placeholder="Address Line 2" name="addressline2" id="addressline2" /><br />
 					<input type="text" placeholder="City" name="city" id="city" /><br />
-					<input type="text" placeholder="State" name="state" id="state" /><br />
-					<input type="text" placeholder="Zipcode" name="zip" id="zip" /><br />
+					<input type="text" placeholder="State" name="state" id="state" maxlength="3"/><br />
+					<input type="text" placeholder="Zipcode" name="zip" id="zip" maxlength="4" /><br />
 				</div>
 				<div id="payment">
 					<h1>Payment</h1>
 					<input type="text" placeholder="Name on card" name="cardholder" id="cardholder" /><br />
-					<input type="text" placeholder="Credit Card Number" name="creditcard" id="creditcard" /><br />
-					<input type="text" placeholder="CVV" name="cvv" id="cvv" /><br />
+					<input type="text" placeholder="Credit Card Number" name="creditcard" id="creditcard" maxlength="16" /><br />
+					<input type="text" placeholder="CVV" name="cvv" id="cvv" maxlength="3" /><br />
 					<input type="text" placeholder="Expiration date" name="exp" id="exp" /><br />
 				</div>
 				<input type="submit" value="Submit" name="submit" />

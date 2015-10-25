@@ -1,5 +1,6 @@
 <?php 
 session_start();
+include ('addUser.php');
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" />
@@ -52,14 +53,15 @@ session_start();
 	<div id="content">
 		<div class="form-box">
 			<h1>Regsiter</h1>
-			<form id="register" action="addUser.php" method="post" onsubmit="return checkRegistration(this)">
-				<input type="text" placeholder="First Name" name="firstname" id="firstname" /><br />
-				<input type="text" placeholder="Last Name" name="lastname" id="lastname" /><br />
-				<input type="email" placeholder="Email" name="email" id="email" /><br />
-				<input type="text" placeholder="Username" name="username" id="username" /><br />
-				<input type="password" placeholder="Password" name="password" id="password" /><br />
+			<form id="register" action="" method="post" onsubmit="return checkRegistration(this)">
+				<input type="text" placeholder="First Name" name="firstname" id="firstname" maxlength="20" /><br />
+				<input type="text" placeholder="Last Name" name="lastname" id="lastname" maxlength="30" /><br />
+				<input type="email" placeholder="Email" name="email" id="email" maxlength="50" /><br />
+				<input type="text" placeholder="Username" name="username" id="username" maxlength="25" /><br />
+				<span><?php echo $error; ?></span>
+				<input type="password" placeholder="Password" name="password" id="password" maxlength="100" /><br />
 				<input type="password" placeholder="Confirm Password" name="confirmpassword" id="confirmpassword" /><br />
-				<input type="submit" value="Submit" />
+				<input type="submit" name="submit" value="Submit" />
 			</form>
 		</div>
 

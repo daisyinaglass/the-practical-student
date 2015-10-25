@@ -45,11 +45,6 @@ if (!$result) {
 		
     }
 
-	/*foreach($_SESSION['cart'] as $row => $innerArray){
-		foreach($innerArray as $innerRow => $value){
-			echo $value . "<br/>";
-		}
-	}*/
 	echo "<script>window.history.back()</script>";
 }
 

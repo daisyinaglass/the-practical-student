@@ -66,17 +66,17 @@ include('session.php');
 			print "<div class=\"form-box\">";
 			while ($row = mysql_fetch_array($result)) {
 				print "<form action=\"update.php\" method=\"post\" onsubmit=\"return validateUpdate(this)\">
-				First Name<input type=\"text\" value=\"".$row['FirstName']."\" name=\"firstname\" id=\"firstname\" /><br />
-				Last Name<input type=\"text\" value=\"".$row['LastName']."\" name=\"lastname\" id=\"lastname\" /><br />
-				Email <input type=\"email\" value=\"".$row['Email']."\" name=\"email\" id=\"email\" /><br />
-				Address Line 1 <input type=\"text\" value=\"".$row['AddressLine1']."\" name=\"addressline1\" id=\"addressline1\" /><br />
-				Address Line 2 <input type=\"text\" value=\"".$row['AddressLine2']."\" name=\"addressline2\" id=\"addressline2\" /><br />
-				City <input type=\"text\" value=\"".$row['City']."\" name=\"city\" id=\"city\" /><br />
-				State <input type=\"text\" value=\"".$row['State']."\" name=\"state\" id=\"state\" /><br />
-				Zipcode <input type=\"text\" value=\"".$row['Zip']."\" name=\"zip\" id=\"zip\" /><br />
-				Username <input type=\"text\" value=\"".$row['Username']."\" name=\"username\" id=\"username\" readonly/><br />
-				Password <input type=\"password\" value=\"".$row['Password']."\" name=\"password\" id=\"password\" /><br />
+				First Name<input type=\"text\" value=\"".$row['FirstName']."\" name=\"firstname\" id=\"firstname\" maxlength=\"20\" /><br />
+				Last Name<input type=\"text\" value=\"".$row['LastName']."\" name=\"lastname\" id=\"lastname\" maxlength=\"30\" /><br />
+				Email <input type=\"email\" value=\"".$row['Email']."\" name=\"email\" id=\"email\" maxlength=\"50\" /><br />
+				Address Line 1 <input type=\"text\" value=\"".$row['AddressLine1']."\" name=\"addressline1\" id=\"addressline1\" maxlength=\"50\" /><br />
+				Address Line 2 <input type=\"text\" value=\"".$row['AddressLine2']."\" name=\"addressline2\" id=\"addressline2\" maxlength=\"50\" /><br />
+				City <input type=\"text\" value=\"".$row['City']."\" name=\"city\" id=\"city\" maxlength=\"20\" /><br />
+				State <input type=\"text\" value=\"".$row['State']."\" name=\"state\" id=\"state\" maxlength=\"3\" /><br />
+				Zipcode <input type=\"text\" value=\"".$row['Zip']."\" name=\"zip\" id=\"zip\" maxlength=\"4\" /><br />
+				Password <input type=\"password\" value=\"".$row['Password']."\" name=\"password\" id=\"password\" maxlength=\"100\" /><br />
 				Confirm password change<input type=\"password\" value=\"\" name=\"confirmpassword\" id=\"confirmpassword\" /><br />
+				<input type=\"hidden\" value=\"".$row['Username']."\" name=\"username\" />
 				<input type=\"submit\" id=\"submit\" value=\"Update\" />
 				</form>";
 			}

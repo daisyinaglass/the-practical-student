@@ -90,12 +90,12 @@ $_SESSION['prevsearch'] = $_GET["searchtext"];
 								<button type=\"button\" onclick=\"removeItem('".$prodrow["ProductID"]."')\">Remove</button>
 							</div>
 						</div>";
-						$total += number_format(floatval($prodrow["Price"]*$qty), 2);
+						$total += floatval($prodrow["Price"]*$qty);
 			    		$i++;
 			    	}
 			    }
 			}
-		    print "Total: $<input type=\"text\" id=\"total\" name=\"total\" value=\"".number_format(floatval($total), 2)."\"/>";
+		    print "Total: $<input type=\"text\" id=\"total\" name=\"total\" value=\"".number_format(floatval($total), 2)."\" readonly/>";
 		    print "<input type=\"submit\" value=\"Order Now\"></form>";
 
 		    mysql_free_result($result);
