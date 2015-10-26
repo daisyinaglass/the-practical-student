@@ -6,7 +6,7 @@
 		$text = stripcslashes($text);
 		$text = htmlspecialchars($text);
 	}
-
+	//if the user tried to submit their login...
 	if (isset($_POST['submit'])) {
 		//get the variables and clean them
 		$username = $_POST['username'];

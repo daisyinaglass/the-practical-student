@@ -31,7 +31,7 @@ if (!$result) {
 		//if already exists in cart, add to it
 		for ($i = 0; $i < count($_SESSION['cart']); $i++) {
 			if($_SESSION['cart'][$i][0] == $productid) {
-				echo "<script>Found match; adding more to cart</script>";
+				//echo "<script>Found match; adding more to cart</script>";
 				$_SESSION['cart'][$i][1] += $quantity;
 				$found = true;
 				break;
