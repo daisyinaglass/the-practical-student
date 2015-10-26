@@ -1,5 +1,7 @@
 <?php
+//start the session to access the session variables
 session_start();
+//include the session.php script
 include('session.php');
 ?>
 

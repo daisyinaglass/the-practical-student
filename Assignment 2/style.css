@@ -144,11 +144,13 @@ div {
 	overflow: hidden;
 }
 /* 	This next section is borrowed heavily from responsivegridsystem.com. */
+/* Eliminate formatting for the rows */
 .row { 
 	clear: both;
 	padding: 0px;
 	margin: 0px;
 }
+/* For each item in the column, float it left and block with small margins */
 .col {
 	float: left;
 	background-color: #FFF;
@@ -164,18 +166,22 @@ div {
 }
 .col img {
 	width: 95%;
-	height: auto%;
+	height: auto;
 }
+/* Eliminates margin on one side of the first item so all of the spacing matches up */
 #products-special .col:first-of-type {
 	margin-left: 0;
 }
+/* Make sure display table is on to make grid work */
 .group::before, .group::after {
 	content: "";
 	display: table;
 }
+/* Clear row so that each row "starts" on new line together */
 .group::after {
 	clear: both;
 }
+/* Make the widths of each box slightly smaller than their equal division */
 .span-1-2 {
 	width: 49.2%;
 }
